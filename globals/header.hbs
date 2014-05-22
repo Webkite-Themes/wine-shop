@@ -1,0 +1,6 @@
+{{#any this.sort.sortableFacets.length this.filters.filterableFacets.length}}
+  <header class="webkite-results-header">
+    {{>sorts this.sort~}}
+    {{>filters this.filters}}
+  </header>
+{{/any}}
