@@ -32,10 +32,10 @@ update these so that new features and bug fixes are available:
         git fetch theme-globals
         git merge theme-globals/master
 
-    or update to an explicit version:
+    or update to an explicit tagged version:
 
         git fetch theme-globals
-        git merge theme-globals/globals_1.0.0
+        git merge globals_1.0.0
 
 Adding globals to an existing repository
 ----------------------------------------
