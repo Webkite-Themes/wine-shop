@@ -201,8 +201,8 @@ $tokenFifth: #6f7ca8;
         @if $colorVariant == dark{background: url("branding-dark.svg") center top no-repeat;}
         background-size:100%;
         display: inline-block;
-        height: 2.813em;
-        width: 8.5em;
+        height: 34px;
+        width: 102px;
         }
       }
     .webkite-results-header{
@@ -212,7 +212,8 @@ $tokenFifth: #6f7ca8;
       }
     .webkite-results-footer{
       @include breakThat;
-      height: 2.813em;
+      height: 34px;
+      font-size:14px;
       }
       
     }
@@ -534,10 +535,10 @@ $tokenFifth: #6f7ca8;
   #webkite-results{
     
     .webkite-pagination-area{
-      font: 400 1.2em/0 'Open Sans', 'Arial', sans-serif;
+      font: 400 14px/0 'Open Sans', 'Arial', sans-serif;
       }
     .webkite-results-paginator{
-      font-size: 1em;
+      font-size: 14px;
       a, p{display: inline;}
       em{font-style: italic;}
       a{font-size: 1.2em; line-height: 0;}
@@ -593,7 +594,7 @@ $tokenFifth: #6f7ca8;
       padding-left: 0;
       }
     .webkite-branding-area{padding-bottom: $mainGutter;}
-    .webkite-results-footer{height: $mainGutter*5.5;}
+    .webkite-results-footer{height: 90px;}
     }
   
   #webkite-results.sm{
