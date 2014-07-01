@@ -142,6 +142,11 @@ $tokenFifth: #6f7ca8;
     text-transform: none;
     vertical-align: baseline;
     text-rendering: auto;
+    -webkit-transition: none;
+    -moz-transition:none;
+    -ms-transition:none;
+    -o-transition: all 0 none;
+    transition:none;
     }
   button, select, input{
     text-transform: none;
