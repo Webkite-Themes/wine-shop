@@ -1,12 +1,12 @@
-{{~#if sortableFacets.length~}}
+{{~#if (find facets sortable=true)~}}
   <div class="webkite-sort-area">
-    <button class="webkite-toggle" data-id="{{this.id}}" data-target=".sort-menu">sort<i></i></button>
+    <button class="webkite-toggle" data-target=".sort-menu">sort<i></i></button>
     <ul class="sort-menu webkite-menu webkite-hide">
-      <li class="webkite-apply-sort{{#unless currentSort}} active{{/unless}}">
-        <a href="#"{{#unless currentSort}} class="webkite-toggle" data-target=".sort-menu"{{/unless}} data-sort="" data-id="{{this.id}}">Default Sort</a>
+      <li class="webkite-apply-sort{{#unless sort.currentSort}} active{{/unless}}">
+        <a href="#"{{#unless sort.currentSort}} class="webkite-toggle" data-target=".sort-menu"{{/unless}} data-sort="">Default Sort</a>
       </li>  
-      {{#each sortableFacets}}
-        <li class="webkite-apply-sort {{#if (equals this ../currentSort)}}active{{/if}}"><a href="#" class="{{../currentDirection}}" data-id="{{this.id}}"  data-sort="{{this}}">{{this}}</a></li>
+      {{#each (select facets sortable=true)}}
+        <li class="webkite-apply-sort{{#if (equals name ../sort.currentSort)}} active{{/if}}"><a href="#" class="{{../sort.currentDirection}}" data-sort="{{name}}">{{displayName}}</a></li>
       {{/each}}
     </ul>
   </div>

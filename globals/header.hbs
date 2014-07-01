@@ -1,6 +1,6 @@
-{{#any this.sort.sortableFacets.length this.filters.filterableFacets.length}}
+{{#any (find facets filterable=true type="Enum") (find facets sortable=true)}}
   <header class="webkite-results-header">
-    {{>sorts this.sort~}}
-    {{>filters this.filters}}
+    {{>sorts~}}
+    {{>filters}}
   </header>
 {{/any}}
