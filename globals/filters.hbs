@@ -1,19 +1,20 @@
 {{~#if (select facets filterable=true type="Enum")~}}
   <div class="webkite-filter-area">
     <div class="webkite-applied-filters">
-      <button class="webkite-toggle" data-target=".filter-menu">filter<i></i></button>
-        
-      <ul class="filter-menu webkite-hide webkite-menu">
-        {{#each (select facets filterable=true type="Enum")}}
-          <li><span class="webkite-link">{{displayName}}</span>
-            <ul class="filter-menu-child">
-              {{~#each values~}}
-                <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".filter-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
-              {{~/each~}}
-            </ul>
-          </li>
-        {{/each}}
-      </ul>
+      <div class="webkite-primary-filter-menu">
+        <button class="webkite-toggle" data-target=".filter-menu" type="button"><span class="webkite-toggle" data-target=".filter-menu">{{t "Filter" default="Filter"}}</span><i></i></button>
+        <ul class="filter-menu webkite-hide webkite-menu">
+          {{#each (select facets filterable=true type="Enum")}}
+            <li><span class="webkite-link">{{displayName}}</span>
+              <ul class="filter-menu-child">
+                {{~#each values~}}
+                  <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".filter-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+                {{~/each~}}
+              </ul>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
         
       <div class="current-filters">
         <a href="#" class="webkite-clear-filters"></a>

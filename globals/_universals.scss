@@ -197,7 +197,7 @@ $tokenFifth: #6f7ca8;
     .webkite-results-header, .webkite-results-footer{
       text-align: justify;
       position: relative;
-      .webkite-title-area, .webkite-sort-area, .webkite-filter-area, .webkite-branding-area, .webkite-pagination-area{
+      .webkite-branding-area, .webkite-pagination-area, .webkite-sort-area, .webkite-filter-area{
         display: inline-block;
         vertical-align:top;
         }
@@ -220,49 +220,155 @@ $tokenFifth: #6f7ca8;
       height: 34px;
       font-size:14px;
       }
-      
     }
-  
-  /************************************************* SORTS */
+    
+  /************************************** SORTS AND FILTERS */
   #webkite-results{
   
-    .webkite-sort-area > .webkite-toggle{
+    .webkite-sort-area > .webkite-toggle,
+    .webkite-primary-filter-menu > .webkite-toggle{
       @include boxedUp;
       @include roundedUp(3px);
       background: $lightestOpacity;
       color: $lightOpacity;
       cursor: pointer;
-      display: inline-block;
+      outline: none;
+      display: block;
+      position:relative;
       border: 1px solid $lighterOpacity;
       font: 700 14px/1.3 'Open Sans', 'Arial', sans-serif;
-      margin: 0;
-      outline: none;
-      padding: 3px $mainGutter/2.5 3px $mainGutter/2.5;
-      height: 28px;
       text-align: left;
-      i{
-        @if $colorVariant == light{background: url("angle-light.png") center center no-repeat;}
-        @if $colorVariant == dark{background: url("angle-dark.png") center center no-repeat;} 
-        display: inline-block;
-        height: 10px;
-        margin-left: $mainGutter/2;
-        pointer-events: none;
-        width: 10px;
+      margin: 0;
+      padding: 3px 18px 3px 0;
+      height: 28px;
+      width:80px;
+      white-space:nowrap;
+      > span {
+        @include boxedUp;
+        white-space:nowrap;
+        display:block;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        padding-left:8px;
+        width:100%;
         }
       }
+    /* sorts */ 
     .webkite-sort-area{
-      width:68px;
       position: relative;
       z-index: 3;
       }
-    
+    .webkite-sort-area > .webkite-toggle i{
+      @if $colorVariant == light{background: url("angle-light.png") center center no-repeat;}
+      @if $colorVariant == dark{background: url("angle-dark.png") center center no-repeat;} 
+      height: 10px;
+      pointer-events: none;
+      width: 10px;
+      position:absolute;
+      top:50%;
+      margin-top:-5px;
+      right:8px;
+      }
+    /* filters */    
+    .webkite-filter-area{
+      @include boxedUp;
+      width: 100%;
+      position: relative;
+      }
+    .webkite-sort-area + .webkite-filter-area{
+      padding-left: 90px;
+      margin-left: -80px;
+      }
+    .webkite-applied-filters{
+      position: relative; 
+      }
+    .webkite-primary-filter-menu {
+      position:absolute;
+      left:0;
+      top:0; 
+      vertical-align:top;
+      z-index: 2;
+      }
+    .webkite-primary-filter-menu > .webkite-toggle {@include roundedUp(3px 0 0 3px);}
+    .webkite-primary-filter-menu > .webkite-toggle i{
+      @if $colorVariant == light{background: url("plus-light.png") no-repeat;} 
+      @if $colorVariant == dark{background: url("plus-dark.png") no-repeat;}
+      height: 12px;
+      width: 12px;
+      pointer-events: none;
+      position:absolute;
+      top:50%;
+      margin-top:-6px;
+      right:6px;
+      }
+    .current-filters{
+      @include roundedUp(0 3px 3px 0);
+      @include boxedUp;
+      background: white;
+      border: 1px solid $lighterOpacity;
+      border-left:none;
+      display: block;
+      height: 28px;
+      padding: 5px 25px 5px 0px;
+      margin-left:80px;
+      position: relative;
+      text-align: left;
+      vertical-align:top;
+      /* and & or */
+      span{
+        @if $colorVariant == light{color: $lightOpacity;} 
+        @if $colorVariant == dark{color: $lightOpacity/2;} 
+        font-size: 14px;
+        line-height: 1.2em;
+        padding: 0 0.41667em 0 0;
+        vertical-align: top;
+        }
+      }
+    .filter-token-wrapper{
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      & > span:first-child {padding-left:0.41667em;}
+      }
+    /* tokens */
+    a.webkite-remove-filter{
+      @include ellipsisThis;
+      @include roundedUp(2px);
+      color: white;
+      font-size: 14px;
+      line-height: 1;
+      max-width: 100px;
+      padding: 0.0625em 0.3125em;
+      text-align: left;
+      word-wrap: normal;
+      margin-right:0.41667em;
+      &:hover{text-decoration: line-through;}
+      }
+    [class^="filter-group"]{display: inline-block;}
+    .filter-group-0 a.webkite-remove-filter{ background: $tokenFirst; }
+    .filter-group-1 a.webkite-remove-filter{ background: $tokenSecond; }
+    .filter-group-2 a.webkite-remove-filter{ background: $tokenThird; }
+    .filter-group-3 a.webkite-remove-filter{ background: $tokenFourth; }
+    .filter-group-4 a.webkite-remove-filter{ background: $tokenFifth; }
+    /* clear everything */ 
+    a.webkite-clear-filters{
+      background: url("clear-all-icon.png") center top no-repeat;
+      height: 18px;
+      width: 18px;
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      &:active{
+        background-position: 0 -18px;
+        }
+      }
     }
-  
-  /********************************************* SORT MENU */
+    
+  /**************************************** SORT/FILTER MENU */
   #webkite-results{
-  
-    .sort-menu{
-      margin: 0;
+    .sort-menu, .filter-menu{
       @include roundedUp(3px);
       @include shadowHere;
       -webkit-padding-start: 0;
@@ -270,18 +376,21 @@ $tokenFifth: #6f7ca8;
       background: white;
       font-size: 14px;
       line-height:1.2;
+      margin: 0;
       padding: $mainGutter/2 0;
       position: absolute;
       z-index: 4;
       top: $mainGutter/2;
       left: $mainGutter/2;
       }
-    .sort-menu li{
+    .sort-menu li, .filter-menu li{
       list-style-type: none;
       position: relative;
       padding-bottom:0;
       }
-    .sort-menu li a{
+    .sort-menu li a,
+    .filter-menu li .webkite-link, .filter-menu li a{
+      color: $linkColor;
       display: block;
       padding: $mainGutter/10 $mainGutter/2;
       white-space: pre;
@@ -307,183 +416,22 @@ $tokenFifth: #6f7ca8;
       &.asc::after{background-position: 0 0;}
       &.desc::after{background-position: 0 -5px;}
       }
-    
-    }
-  
-  /************************************************ FILTERS */
-  #webkite-results{
-  
-    .webkite-filter-area{
-      @include boxedUp;
-      width: 100%;
+    /* filter arrow */
+    .filter-menu > li > .webkite-link{
+      color: $linkColor;
+      cursor: pointer;
+      padding-right: $mainGutter;
       position: relative;
-      }
-    .webkite-sort-area + .webkite-filter-area{
-      padding-left: 78px;
-      margin-left: -68px;
-      }
-    .webkite-applied-filters{
-      position: relative; 
-      }
-    .current-filters{
-      @if $colorVariant == light{@include roundedUp(3px);}
-      @if $colorVariant == dark{@include roundedUp(4px 3px 3px 4px);}
-      @include boxedUp;
-      background: white;
-      border: 1px solid $lighterOpacity;
-      display: inline-block;
-      height: 28px;
-      padding: 5px 25px 5px 72px;
-      position: relative;
-      width: 100%;
-      text-align: left;
-      /* and & or */
-      span{
+      &::after{
         @if $colorVariant == light{color: $lightOpacity;} 
         @if $colorVariant == dark{color: $lightOpacity/2;} 
-        font-size: 14px;
-        line-height: 1.2em;
-        padding: 0 0.41667em 0 0;
-        vertical-align: top;
+        content: "\203A";
+        opacity: .5;
+        position: absolute;
+        right: $mainGutter/3;
         }
       }
-    .webkite-applied-filters > .webkite-toggle{
-      @if $colorVariant == light{background: $lightestOpacity;} 
-      @if $colorVariant == dark{background: rgba(0,0,0,.85);} 
-      cursor: pointer;
-      display: inline-block;
-      position: absolute;
-      margin: 0;
-      outline: none;
-      z-index: 2;
-      left: 0;
-      @include boxedUp;
-      @include roundedUp(3px 0 0 3px);
-      border: 1px solid $lightestOpacity;
-      border-right-color: $lighterOpacity;
-      @if $colorVariant == dark{border: 1px solid $lighterOpacity;} 
-      @if $colorVariant == light{background-clip: padding-box;} 
-      color: $lightOpacity;
-      font: 700 14px/1 'Open Sans', 'Arial', sans-serif;
-      padding: 0 $mainGutter/2.5;
-      height: 28px;
-      width:73px;
-      white-space:nowrap;
-      text-align:left;
-      i{
-        @if $colorVariant == light{background: url("plus-light.png") no-repeat;} 
-        @if $colorVariant == dark{background: url("plus-dark.png") no-repeat;}
-        display: inline-block;
-        height: 12px;
-        width: 12px;
-        margin-left: $mainGutter/2.5;
-        pointer-events: none;
-        position:relative;
-        top:1px;
-        }
-      }
-    .filter-token-wrapper{
-      display: inline-block;
-      max-width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      width: 100%;
-      & > span:first-child {padding-left:0.41667em;}
-      }
-    /* tokens */
-    a.webkite-remove-filter{
-      @include ellipsisThis;
-      @include roundedUp(2px);
-      color: white;
-      font-size: 14px;
-      line-height: 1;
-      max-width: 100px;
-      padding: 0.0625em 0.3125em;
-      text-align: left;
-      word-wrap: normal;
-      margin-right:0.41667em;
-      &:hover{text-decoration: line-through;}
-      }
-    [class^="filter-group"]{
-      display: inline-block;
-      }
-    .filter-group-0 a.webkite-remove-filter{
-      background: $tokenFirst;
-      }
-    .filter-group-1 a.webkite-remove-filter{
-      background: $tokenSecond;
-      }
-    .filter-group-2 a.webkite-remove-filter{
-      background: $tokenThird;
-      }
-    .filter-group-3 a.webkite-remove-filter{
-      background: $tokenFourth;
-      }
-    .filter-group-4 a.webkite-remove-filter{
-      background: $tokenFifth;
-      }
-    /* clear everything */ 
-    a.webkite-clear-filters{
-      background: url("clear-all-icon.png") center top no-repeat;
-      display: inline-block;
-      height: 18px;
-      width: 18px;
-      position: absolute;
-      right: 4px;
-      top: 4px;
-      &:active{
-        background-position: 0 -18px;
-        }
-      }
-    
-    }
-  
-  /**************************************** FILTER DROPDOWN */
-  #webkite-results{
-  
-    .filter-menu{
-      margin: 0;
-      @include roundedUp(3px);
-      @include shadowHere;
-      -webkit-padding-start: 0;
-      -moz-padding-start: 0;
-      background: white;
-      font-size: 14px;
-      padding: $mainGutter/2 0;
-      position: absolute;
-      z-index: 3;
-      top: $mainGutter/2;
-      left: $mainGutter/2;
-      }
-    .filter-menu li{
-      list-style-type: none;
-      position: relative;
-      padding-bottom:0;
-      }
-    .filter-menu li .webkite-link, .filter-menu li a{
-      color: $linkColor;
-      display: block;
-      padding: $mainGutter/8 $mainGutter/2;
-      white-space: pre;
-      &:hover{
-        background: $linkColor;
-        color: white;
-        }
-      }
-    .filter-menu > li > .webkite-link{
-        color: $linkColor;
-        cursor: pointer;
-        padding-right: $mainGutter;
-        position: relative;
-        &::after{
-          @if $colorVariant == light{color: $lightOpacity;} 
-          @if $colorVariant == dark{color: $lightOpacity/2;} 
-          content: "\203A";
-          opacity: .5;
-          position: absolute;
-          right: $mainGutter/3;
-          }
-        }
+    /* filter submenu*/
     .filter-menu-child{
       @include roundedUp(3px);
       @include shadowHere;
@@ -499,10 +447,9 @@ $tokenFifth: #6f7ca8;
       }
     .filter-menu li:hover .filter-menu-child{
       display: block;
-      }
+      }    
+    }    
     
-    }
-  
   /******************************* FILTER OVERVIEW AND SHADE */
   #webkite-results{
     
@@ -511,7 +458,7 @@ $tokenFifth: #6f7ca8;
       @include gradiateHorizontal;
       height: auto; width: 1.5em;
       position: absolute;
-      left: 71px;
+      left: -1px;
       top:-1px;
       bottom:-1px;
       }
@@ -525,7 +472,7 @@ $tokenFifth: #6f7ca8;
       position: absolute;
       top:-1px;
       right:-1px;
-      left:71px;
+      left:-1px;
       z-index: 3;
       .all-filters-wrapper{
         white-space: normal;
@@ -581,16 +528,12 @@ $tokenFifth: #6f7ca8;
     
   /************************************** ELEMENT QUERIES */
   #webkite-results.xs{
-    .webkite-title-area, .webkite-branding-area, .webkite-pagination-area{
+    .webkite-branding-area, .webkite-pagination-area{
       width: 100%;
       padding-right: 0;
       text-align:center;
       }
-    .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{width: 100%;}
-    .webkite-sort-area > .webkite-toggle i{
-      float: right; 
-      margin-top: $mainGutter/4;
-      }
+    .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{ width: 100%; }
     .sort-menu{width: 95%;}
     .webkite-sort-area+.webkite-filter-area{ margin-top: $mainGutter;}
     .webkite-filter-area,
@@ -604,10 +547,6 @@ $tokenFifth: #6f7ca8;
   
   #webkite-results.sm{
     .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{ width: 100%; }
-    .webkite-sort-area > .webkite-toggle i{
-      float: right; 
-      margin-top: $mainGutter/4;
-      }
     .sort-menu{width: 95%;}
     .webkite-sort-area+.webkite-filter-area{ margin-top: $mainGutter;}
     .webkite-filter-area,
