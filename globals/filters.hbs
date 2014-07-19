@@ -20,14 +20,14 @@
         <a href="#" class="webkite-clear-filters"></a>
         <div class="filter-token-wrapper webkite-overflow-hidden-left webkite-toggle-hover" data-replace="true" data-target=".webkite-truncated + .all-current-filters">
           {{~#each (select filters.currentFilters type="Enum")}}
-            {{~#if @first~}}<span>by</span>{{~/if~}}
+            {{~#if @first~}}<span>{{t "by" default="by"}}</span>{{~/if~}}
             <div class="filter-group-{{@index}}">
               {{~#each values~}}
                 <a href="#" class="webkite-remove-filter" data-facet="{{../facet}}" data-operator="{{../operator}}" data-value="{{this}}" title="{{this}}">{{this}}</a>
-                {{~#unless @last}}<span>or</span>{{/unless~}}
+                {{~#unless @last}}<span>{{t "or" default="or"}}</span>{{/unless~}}
               {{~/each~}}
             </div>
-            {{~#unless @last}}<span>and</span>{{/unless~}}
+            {{~#unless @last}}<span>{{t "and" default="and"}}</span>{{/unless~}}
           {{~/each~}}
         </div><!-- filter-token-wrapper -->
       
@@ -35,14 +35,14 @@
           <a href="#" class="webkite-clear-filters"></a>
           <div class="all-filters-wrapper">
             {{~#each (select filters.currentFilters type="Enum")}}
-              {{~#if @first~}}<span>by</span>{{~/if~}}
+              {{~#if @first~}}<span>{{t "by" default="by"}}</span>{{~/if~}}
               <div class="filter-group-{{@index}}">
                 {{~#each values~}}
                   <a href="#" class="webkite-remove-filter" data-facet="{{../facet}}" data-operator="{{../operator}}" data-value="{{this}}" title="{{this}}">{{this}}</a>
-                  {{~#unless @last}}<span>or</span>{{/unless~}}
+                  {{~#unless @last}}<span>{{t "or" default="or"}}</span>{{/unless~}}
                 {{~/each~}}
               </div>
-              {{~#unless @last}}<span>and</span>{{/unless~}}
+              {{~#unless @last}}<span>{{t "and" default="and"}}</span>{{/unless~}}
             {{~/each~}}
           </div><!-- all-current-filters-->
         </div><!-- all-current-filters -->
