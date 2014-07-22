@@ -2,7 +2,7 @@
   <div class="webkite-filter-area">
     <div class="webkite-applied-filters">
       <div class="webkite-primary-filter-menu">
-        <button class="webkite-toggle" data-target=".filter-menu" type="button"><span class="webkite-toggle" data-target=".filter-menu">{{t "Filter" default="Filter"}}</span><i></i></button>
+        <button class="webkite-toggle" data-target=".filter-menu" type="button" title="{{t "Filter" default="Filter"}}"><span class="webkite-toggle" data-target=".filter-menu">{{t "Filter" default="Filter"}}</span><i></i></button>
         <ul class="filter-menu webkite-hide webkite-menu">
           {{#each (select facets filterable=true type="Enum")}}
             <li><span class="webkite-link">{{displayName}}</span>
