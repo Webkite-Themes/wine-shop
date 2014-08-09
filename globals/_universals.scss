@@ -197,9 +197,14 @@ $tokenFifth: #6f7ca8;
     .webkite-results-header, .webkite-results-footer{
       text-align: justify;
       position: relative;
-      .webkite-branding-area, .webkite-pagination-area, .webkite-sort-area, .webkite-filter-area{
+      .webkite-sort-area, .webkite-filter-area{
         display: inline-block;
         vertical-align:top;
+        }
+      .webkite-branding-area {
+        width:102px;
+        margin-right:-102px;
+        display:inline-block;
         }
       .webkite-branding-area a {
         @if $colorVariant == light{background: url("branding-light.svg") center top no-repeat;}
@@ -216,8 +221,6 @@ $tokenFifth: #6f7ca8;
       margin-bottom:$mainGutter;
       }
     .webkite-results-footer{
-      @include breakThat;
-      height: 34px;
       font-size:14px;
       }
     }
@@ -566,7 +569,14 @@ $tokenFifth: #6f7ca8;
   #webkite-results{
     
     .webkite-pagination-area{
+      @include boxedUp;
       font: 400 14px/0 'Open Sans', 'Arial', sans-serif;
+      padding-left:122px;
+      width:100%;
+      text-align:right;
+      display:inline-block;
+      vertical-align:top;
+      line-height:34px;
       }
     .webkite-results-paginator{
       font-size: 14px;
@@ -609,7 +619,8 @@ $tokenFifth: #6f7ca8;
   #webkite-results.xs{
     .webkite-branding-area, .webkite-pagination-area{
       width: 100%;
-      padding-right: 0;
+      padding: 0;
+      margin:0;
       text-align:center;
       }
     .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{ width: 100%; }
@@ -620,8 +631,7 @@ $tokenFifth: #6f7ca8;
       margin-left: 0;
       padding-left: 0;
       }
-    .webkite-branding-area{padding-bottom: $mainGutter;}
-    .webkite-results-footer{height: 90px;}
+    .webkite-branding-area + .webkite-pagination-area{margin-top: $mainGutter;}
 
     .webkite-dataset-name {
       text-align:center;
