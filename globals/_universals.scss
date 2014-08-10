@@ -236,7 +236,7 @@ $tokenFifth: #6f7ca8;
       margin:-0.15em 0 15px;
       padding:0;
       + .webkite-embed-wrapper {
-        margin:-18px 0 0;
+        margin:-13px 0 5px;
         }
       }
     .webkite-embed-wrapper {
@@ -244,9 +244,9 @@ $tokenFifth: #6f7ca8;
       color:$medOpacity;
       font-size:13px;
       line-height:19px;
-      margin:-15px 0 0;
-      padding:15px 0;
-      height:49px;
+      margin:-15px 0 5px;
+      padding:10px 0;
+      height:39px;
       position:relative;
       overflow:hidden;
       }
@@ -254,8 +254,8 @@ $tokenFifth: #6f7ca8;
       @include boxedUp;
       font-size:13px;
       line-height:19px;
-      padding:15px 0;
-      height:49px;
+      padding:10px 0;
+      height:39px;
       position:absolute;
       top:-50px;
       right:0;
@@ -285,7 +285,7 @@ $tokenFifth: #6f7ca8;
       bottom:0;
       left:0;
       width:70px;
-      padding:15px 10px 15px 0;
+      padding:10px 10px 10px 0;
       text-align:left;
       white-space:nowrap;
       overflow:hidden;
@@ -298,7 +298,7 @@ $tokenFifth: #6f7ca8;
       right:0;
       bottom:0;
       width:20px;
-      padding:15px 0 15px 10px;
+      padding:10px 0 10px 10px;
       text-indent:-99999px;
       @if $colorVariant == light{background:url('select-close.png') no-repeat right center;}
       @if $colorVariant == dark{background:url('select-close-dark.png') no-repeat right center;}
@@ -637,25 +637,11 @@ $tokenFifth: #6f7ca8;
     .webkite-dataset-name {
       text-align:center;
       font-size:20px;
-      + .webkite-embed-wrapper {margin-bottom:10px;}
-      }
-    .webkite-embed-wrapper {
-      margin-bottom:10px;
-      height:35px;
-      padding:10px 0;
       }
     .webkite-embed-wrapper .webkite-embed-show {
       display:block;
       text-align:center;
       }
-    #webkite-embedder{
-      height:39px;
-      padding:10px 0;
-      }
-    .webkite-embed-select {
-      padding:10px 10px 10px 0;
-      }
-    .webkite-embed-hide {padding: 10px 0 10px 10px;}
     }
   
   #webkite-results.sm{
