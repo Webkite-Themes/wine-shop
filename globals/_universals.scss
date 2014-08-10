@@ -236,7 +236,7 @@ $tokenFifth: #6f7ca8;
       margin:-0.15em 0 15px;
       padding:0;
       + .webkite-embed-wrapper {
-        margin:-15px 0 0;
+        margin:-18px 0 0;
         }
       }
     .webkite-embed-wrapper {
@@ -244,7 +244,7 @@ $tokenFifth: #6f7ca8;
       color:$medOpacity;
       font-size:13px;
       line-height:19px;
-      margin:0;
+      margin:-15px 0 0;
       padding:15px 0;
       height:49px;
       position:relative;
@@ -655,7 +655,6 @@ $tokenFifth: #6f7ca8;
     .webkite-embed-select {
       padding:10px 10px 10px 0;
       }
-    .webkite-embed-input input {top: -1px;}
     .webkite-embed-hide {padding: 10px 0 10px 10px;}
     }
   
