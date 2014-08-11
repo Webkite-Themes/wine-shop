@@ -578,6 +578,7 @@ $tokenFifth: #6f7ca8;
       display:inline-block;
       vertical-align:top;
       line-height:34px;
+      &:empty{display:none;}
       }
     .webkite-results-paginator{
       font-size: 14px;

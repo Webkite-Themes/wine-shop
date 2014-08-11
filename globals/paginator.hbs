@@ -1,4 +1,4 @@
-{{#unless (equals pages 1)}}
+{{~#unless (equals pages 1)}}
   {{#if pages}}
     <nav class="webkite-results-paginator" role="pagnation">
       <a href="{{permalink page='1'}}" data-page="1" class="first-result-page {{#if (equals page 1)}}disabled{{/if}}" {{#if (equals page 1)}}disabled=""{{/if}}>&#171</a>
@@ -10,4 +10,4 @@
       <a href="{{permalink page=pages}}" data-page="{{pages}}" class="last-result-page {{#if (equals page pages)}}disabled{{/if}}" {{#if (equals page pages)}}disabled=""{{/if}}>&#187</a>
     </nav>
   {{/if}}
-{{/unless}}
+{{/unless~}}
