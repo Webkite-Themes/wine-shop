@@ -205,6 +205,7 @@ $tokenFifth: #6f7ca8;
         width:102px;
         margin-right:-102px;
         display:inline-block;
+        position:relative;
         }
       .webkite-branding-area a {
         @if $colorVariant == light{background: url("branding-light.svg") center top no-repeat;}
