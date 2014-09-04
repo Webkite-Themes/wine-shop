@@ -1,0 +1,660 @@
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
+
+//*******************************************************SIZES
+$mainGutter: 20px;
+
+//***********************************************COLOR PALETTES
+
+$linkColor: #1b9cd2;
+$linkHover: #0073a7;
+  
+//TOKEN COLORS
+$tokenFirst: $linkColor;
+$tokenSecond: #39a17c;
+$tokenThird: #a8936f;
+$tokenFourth: #e6af52;
+$tokenFifth: #6f7ca8;
+
+@if $colorVariant == light{
+  $backgroundColor:rgba(255,255,255,.95);
+  $highOpacity: rgba(0,0,0,.9);
+  $medOpacity: rgba(0,0,0,.7);
+  $lightOpacity: rgba(0,0,0,.6);
+  $lighterOpacity: rgba(0,0,0,.1);
+  $lightestOpacity: rgba(0,0,0,.05);
+  $lighterthanlightestOpacity: rgba(0,0,0,.04);
+  $lighterevenstillOpacity: rgba(0,0,0,.02);
+  $shadowOpacity: rgba(0,0,0,.2);
+  //FILTER SHADE
+  $stepOne: rgba(0,0,0,0.4);
+  $stepTwo: rgba(0,0,0,0.3);
+  $stepThree: rgba(0,0,0,0.15);
+  $stepFour: rgba(0,0,0,0.02);
+  $stepFive: rgba(0,0,0,0);
+  }
+@if $colorVariant == dark{
+  $backgroundColor:rgba(0,0,0,.9);
+  $highOpacity: rgba(255,255,255,1);
+  $medOpacity: rgba(255,255,255,.8);
+  $lightOpacity: rgba(255,255,255,.7);
+  $lighterOpacity: rgba(255,255,255,.1);
+  $lightestOpacity: rgba(255,255,255,.05);
+  $lighterthanlightestOpacity: rgba(255,255,255,.08);
+  $lighterevenstillOpacity: rgba(255,255,255,.05);
+  $shadowOpacity: rgba(0,0,0,.5);
+  //FILTER SHADE
+  $stepOne: rgba(0,0,0,0.5);
+  $stepTwo: rgba(0,0,0,0.4);
+  $stepThree: rgba(0,0,0,0.2);
+  $stepFour: rgba(0,0,0,0.05);
+  $stepFive: rgba(0,0,0,0);
+  }
+
+//******************************************************MIXINS
+@mixin roundedUp($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+  }
+@mixin boxedUp{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  }
+@mixin shadowHere{
+  -webkit-box-shadow: 0 2px 5px $shadowOpacity, 0 1px 1px $shadowOpacity;
+  -moz-box-shadow: 0 2px 5px $shadowOpacity, 0 1px 1px $shadowOpacity;
+  box-shadow: 0 2px 5px $shadowOpacity, 0 1px 1px $shadowOpacity;
+  }
+@mixin hyphenGreat{
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  }
+@mixin ellipsisThis{
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  }
+@mixin breakThat{
+  &::after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;margin: 0;padding: 0; white-space: pre-line;
+    margin-bottom: $mainGutter;
+    }
+  }
+@mixin clearThat{
+  &::after{
+    content: '';
+    clear:both;
+    display: table;
+    }
+  }
+@mixin putHere ($position){
+  top: $position;
+  right: $position;
+  bottom: $position;
+  left: $position;
+  }
+@mixin gradiateHorizontal{
+  @if $colorVariant == light{background: url("gradient-fallback-light.png") repeat-y;}
+  @if $colorVariant == dark{background: url("gradient-fallback-dark.png") repeat-y;}  
+  background: -moz-linear-gradient(left,  $stepOne 0%, $stepTwo 5%, $stepThree 25%, $stepFour 75%, $stepFive 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,$stepOne), color-stop(5%,$stepTwo), color-stop(25%,$stepThree), color-stop(75%,$stepFour), color-stop(100%,$stepFive));
+  background: -webkit-linear-gradient(left,  $stepOne 0%,$stepTwo 5%,$stepThree 25%,$stepFour 75%,$stepFive 100%);
+  background: -o-linear-gradient(left,  $stepOne 0%,$stepTwo 5%,$stepThree 25%,$stepFour 75%,$stepFive 100%);
+  background: -ms-linear-gradient(left,  $stepOne 0%,$stepTwo 5%,$stepThree 25%,$stepFour 75%,$stepFive 100%);
+  background: linear-gradient(to right,  $stepOne 0%,$stepTwo 5%,$stepThree 25%,$stepFour 75%,$stepFive 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#00000000',GradientType=1 );
+  }
+@mixin noShadows{
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none; 
+  box-shadow: none;
+  }
+@mixin hyphenLess{
+  word-wrap: normal;
+  -webkit-hyphens: manual;
+  -moz-hyphens: manual;
+  -ms-hyphens: manual;
+  }
+
+//********************************************************RESET
+@mixin resetThings{
+
+  div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    @include noShadows;
+    @include hyphenLess;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    text-transform: none;
+    vertical-align: baseline;
+    text-rendering: auto;
+    -webkit-transition: none;
+    -moz-transition:none;
+    -ms-transition:none;
+    -o-transition: all 0 none;
+    transition:none;
+    }
+  button, select, input{
+    text-transform: none;
+    &:active{@include noShadows;}  
+    }
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+    }
+   
+  /* HTML5 display-role reset for older browsers */
+   
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block; }
+   
+  body {
+    line-height: 1; }
+   
+  ol, ul, ul li {
+    list-style: none; }
+   
+  blockquote, q {
+    quotes: none; }
+   
+  blockquote {
+    &:before, &:after {
+      content: '';
+      content: none; } }
+   
+  q {
+    &:before, &:after {
+      content: '';
+      content: none; } }
+   
+  table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+
+  }
+
+//*****************************FILTER SORT AND PAGINATION STYLES
+//
+//
+@mixin universalStyles{
+  /******************************************** NAVIGATIONALS */
+  #webkite-results{
+  
+    .webkite-results-header, .webkite-results-footer{
+      text-align: justify;
+      position: relative;
+      .webkite-sort-area, .webkite-filter-area{
+        display: inline-block;
+        vertical-align:top;
+        }
+      .webkite-branding-area {
+        width:102px;
+        margin-right:-102px;
+        display:inline-block;
+        position:relative;
+        }
+      .webkite-branding-area a {
+        @if $colorVariant == light{background: url("branding-light.svg") center top no-repeat;}
+        @if $colorVariant == dark{background: url("branding-dark.svg") center top no-repeat;}
+        background-size:100%;
+        display: inline-block;
+        height: 34px;
+        width: 102px;
+        }
+      }
+    .webkite-results-header{
+      @include clearThat;
+      line-height: 1;
+      margin-bottom:$mainGutter;
+      }
+    .webkite-results-footer{
+      font-size:14px;
+      }
+    }
+
+  /************************************** DATASET NAME & EMBED */
+  #webkite-results{
+    .webkite-dataset-name {
+      color:$medOpacity;
+      font-size:22px;
+      font-weight:bold;
+      font-family: 'Open Sans', 'Arial', sans-serif;
+      line-height:1.1em;
+      margin:-0.15em 0 15px;
+      padding:0;
+      + .webkite-embed-wrapper {
+        margin:-13px 0 5px;
+        }
+      }
+    .webkite-embed-wrapper {
+      @include boxedUp;
+      color:$medOpacity;
+      font-size:13px;
+      line-height:19px;
+      margin:-15px 0 5px;
+      padding:10px 0;
+      height:39px;
+      position:relative;
+      overflow:hidden;
+      }
+    #webkite-embedder {
+      @include boxedUp;
+      font-size:13px;
+      line-height:19px;
+      padding:10px 0;
+      height:39px;
+      position:absolute;
+      top:-50px;
+      right:0;
+      left:0;
+      z-index:1;
+      }
+    .webkite-embed-input{
+      padding:0 20px 0 70px;
+      input{
+        @include roundedUp(2px);
+        @include boxedUp;
+        color:#777;
+        border:1px solid $lighterOpacity;
+        padding:2px;
+        margin:0;
+        outline:none;
+        font-size:10px;
+        position:relative;
+        width:100%;
+        top:-1px;
+        }
+      }
+    .webkite-embed-select{
+      @include boxedUp;
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      width:70px;
+      padding:10px 10px 10px 0;
+      text-align:left;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      }
+    .webkite-embed-hide{
+      @include boxedUp;
+      position:absolute;
+      top:0;
+      right:0;
+      bottom:0;
+      width:20px;
+      padding:10px 0 10px 10px;
+      text-indent:-99999px;
+      @if $colorVariant == light{background:url('select-close.png') no-repeat right center;}
+      @if $colorVariant == dark{background:url('select-close-dark.png') no-repeat right center;}
+      }
+  }  
+    
+  /************************************** SORTS AND FILTERS */
+  #webkite-results{
+  
+    .webkite-sort-area > .webkite-toggle,
+    .webkite-primary-filter-menu > .webkite-toggle{
+      @include boxedUp;
+      @include roundedUp(3px);
+      background: $lightestOpacity;
+      color: $lightOpacity;
+      cursor: pointer;
+      outline: none;
+      display: block;
+      position:relative;
+      border: 1px solid $lighterOpacity;
+      font: 700 14px/1.3 'Open Sans', 'Arial', sans-serif;
+      text-align: left;
+      margin: 0;
+      padding: 3px 18px 3px 0;
+      height: 28px;
+      width:80px;
+      white-space:nowrap;
+      > span {
+        @include boxedUp;
+        white-space:nowrap;
+        display:block;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        padding-left:8px;
+        width:100%;
+        }
+      }
+    /* sorts */ 
+    .webkite-sort-area{
+      position: relative;
+      z-index: 3;
+      }
+    .webkite-sort-area > .webkite-toggle i{
+      @if $colorVariant == light{background: url("angle-light.png") center center no-repeat;}
+      @if $colorVariant == dark{background: url("angle-dark.png") center center no-repeat;} 
+      height: 10px;
+      pointer-events: none;
+      width: 10px;
+      position:absolute;
+      top:50%;
+      margin-top:-5px;
+      right:8px;
+      }
+    /* filters */    
+    .webkite-filter-area{
+      @include boxedUp;
+      width: 100%;
+      position: relative;
+      }
+    .webkite-sort-area + .webkite-filter-area{
+      padding-left: 90px;
+      margin-left: -80px;
+      }
+    .webkite-applied-filters{
+      position: relative; 
+      }
+    .webkite-primary-filter-menu {
+      position:absolute;
+      left:0;
+      top:0; 
+      vertical-align:top;
+      z-index: 2;
+      }
+    .webkite-primary-filter-menu > .webkite-toggle {@include roundedUp(3px 0 0 3px);}
+    .webkite-primary-filter-menu > .webkite-toggle i{
+      @if $colorVariant == light{background: url("plus-light.png") no-repeat;} 
+      @if $colorVariant == dark{background: url("plus-dark.png") no-repeat;}
+      height: 12px;
+      width: 12px;
+      pointer-events: none;
+      position:absolute;
+      top:50%;
+      margin-top:-6px;
+      right:6px;
+      }
+    .current-filters{
+      @include roundedUp(0 3px 3px 0);
+      @include boxedUp;
+      background: white;
+      border: 1px solid $lighterOpacity;
+      border-left:none;
+      display: block;
+      height: 28px;
+      padding: 5px 25px 5px 0px;
+      margin-left:80px;
+      position: relative;
+      text-align: left;
+      vertical-align:top;
+      /* and & or */
+      span{
+        @if $colorVariant == light{color: $lightOpacity;} 
+        @if $colorVariant == dark{color: $lightOpacity/2;} 
+        font-size: 14px;
+        line-height: 1.2em;
+        padding: 0 0.41667em 0 0;
+        vertical-align: top;
+        }
+      }
+    .filter-token-wrapper{
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      & > span:first-child {padding-left:0.41667em;}
+      }
+    /* tokens */
+    a.webkite-remove-filter{
+      @include ellipsisThis;
+      @include roundedUp(2px);
+      color: white;
+      font-size: 14px;
+      line-height: 1;
+      max-width: 100px;
+      padding: 0.0625em 0.3125em;
+      text-align: left;
+      word-wrap: normal;
+      margin-right:0.41667em;
+      &:hover{text-decoration: line-through;}
+      }
+    [class^="filter-group"]{display: inline-block;}
+    .filter-group-0 a.webkite-remove-filter{ background: $tokenFirst; }
+    .filter-group-1 a.webkite-remove-filter{ background: $tokenSecond; }
+    .filter-group-2 a.webkite-remove-filter{ background: $tokenThird; }
+    .filter-group-3 a.webkite-remove-filter{ background: $tokenFourth; }
+    .filter-group-4 a.webkite-remove-filter{ background: $tokenFifth; }
+    /* clear everything */ 
+    a.webkite-clear-filters{
+      background: url("clear-all-icon.png") center top no-repeat;
+      height: 18px;
+      width: 18px;
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      &:active{
+        background-position: 0 -18px;
+        }
+      }
+    }
+    
+  /**************************************** SORT/FILTER MENU */
+  #webkite-results{
+    .sort-menu, .filter-menu{
+      @include roundedUp(3px);
+      @include shadowHere;
+      -webkit-padding-start: 0;
+      -moz-padding-start: 0;
+      background: white;
+      font-size: 14px;
+      line-height:1.2;
+      margin: 0;
+      padding: $mainGutter/2 0;
+      position: absolute;
+      z-index: 4;
+      top: $mainGutter/2;
+      left: $mainGutter/2;
+      }
+    .sort-menu li, .filter-menu li{
+      list-style-type: none;
+      position: relative;
+      padding-bottom:0;
+      }
+    .sort-menu li a,
+    .filter-menu li .webkite-link, .filter-menu li a{
+      color: $linkColor;
+      display: block;
+      padding: $mainGutter/10 $mainGutter/2;
+      white-space: pre;
+      &:hover{
+        background: $linkColor;
+        color: white;
+        } 
+      }
+    /* directional arrow */
+    .sort-menu li.active a{
+      position: relative;
+      padding-right: $mainGutter*1.5;
+      &.asc::after, &.desc::after{
+        background: url("sort-direction.png") no-repeat;
+        content: "";
+        display: block;
+        height: 5px;
+        width: 10px;
+        position: absolute;
+        top: $mainGutter/2.5;
+        right: $mainGutter/2;
+        }
+      &.asc::after{background-position: 0 0;}
+      &.desc::after{background-position: 0 -5px;}
+      }
+    /* filter arrow */
+    .filter-menu > li > .webkite-link{
+      color: $linkColor;
+      cursor: pointer;
+      padding-right: $mainGutter;
+      position: relative;
+      &::after{
+        @if $colorVariant == light{color: $lightOpacity;} 
+        @if $colorVariant == dark{color: $lightOpacity/2;} 
+        content: "\203A";
+        opacity: .5;
+        position: absolute;
+        right: $mainGutter/3;
+        }
+      }
+    /* filter submenu*/
+    .filter-menu-child{
+      @include roundedUp(3px);
+      @include shadowHere;
+      -webkit-padding-start: 0;
+      -moz-padding-start: 0;
+      display: none; 
+      position: absolute; 
+      background: white;
+      padding: $mainGutter/2 0;
+      left: 100%;
+      top: -$mainGutter/2;
+      margin: 0;
+      }
+    .filter-menu li:hover .filter-menu-child{
+      display: block;
+      }    
+    }    
+    
+  /******************************* FILTER OVERVIEW AND SHADE */
+  #webkite-results{
+    
+    .filter-token-wrapper.webkite-truncated:before{
+      content: "";
+      @include gradiateHorizontal;
+      height: auto; width: 1.5em;
+      position: absolute;
+      left: -1px;
+      top:-1px;
+      bottom:-1px;
+      }
+    .all-current-filters{
+      @include roundedUp(0 3px 3px 3px);
+      @include boxedUp;
+      background: white;
+      border: 1px solid $lighterOpacity;
+      line-height: 19px;
+      padding: $mainGutter/4 25px $mainGutter/10 $mainGutter/4;
+      position: absolute;
+      top:-1px;
+      right:-1px;
+      left:-1px;
+      z-index: 3;
+      .all-filters-wrapper{
+        white-space: normal;
+        & > span:first-child {padding-left:0;}
+        [class^="filter-group"]{display: inline;}
+        }
+      }
+    
+    }
+  
+  /********************************************* PAGINATION */
+  #webkite-results{
+    
+    .webkite-pagination-area{
+      @include boxedUp;
+      font: 400 14px/0 'Open Sans', 'Arial', sans-serif;
+      padding-left:122px;
+      width:100%;
+      text-align:right;
+      display:inline-block;
+      vertical-align:top;
+      line-height:34px;
+      &:empty{display:none;}
+      }
+    .webkite-results-paginator{
+      font-size: 14px;
+      a, p{display: inline;}
+      em{font-style: italic;}
+      a{font-size: 1.2em; line-height: 0;}
+      }
+    .first-result-page, .previous-result-page{
+      padding-right: $mainGutter/2;
+      &.disabled{color: $lightOpacity;&:hover{color: $lightOpacity; cursor: default;}}
+      }
+    .next-result-page, .last-result-page{
+      padding-left: $mainGutter/2;
+      &.disabled{color: $lightOpacity;&:hover{color: $lightOpacity; cursor:default;}}
+      }
+    /* page input */
+    input.webkite-page-input{
+      @include roundedUp(2px);
+      border: 1px solid $lighterOpacity;
+      @if $colorVariant == light{color: $lightOpacity;} 
+      @if $colorVariant == dark{color: $lightOpacity/2;} 
+      padding: $mainGutter/4;
+      -moz-appearance:textfield;
+      max-width: 1.5em; 
+      font-size: .9em;
+      text-align:center;
+      }
+    /* remove arrows */
+    .webkite-page-input::-webkit-outer-spin-button,
+    .webkite-page-input::-webkit-inner-spin-button{
+      -webkit-appearance: none;
+      margin: 0;
+      }
+    input[type=number] {
+      -moz-appearance:textfield;
+      }
+    }
+    
+  /************************************** ELEMENT QUERIES */
+  #webkite-results.xs{
+    .webkite-branding-area, .webkite-pagination-area{
+      width: 100%;
+      padding: 0;
+      margin:0;
+      text-align:center;
+      }
+    .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{ width: 100%; }
+    .sort-menu{width: 95%;}
+    .webkite-sort-area+.webkite-filter-area{ margin-top: $mainGutter;}
+    .webkite-filter-area,
+    .webkite-sort-area + .webkite-filter-area{
+      margin-left: 0;
+      padding-left: 0;
+      }
+    .webkite-branding-area + .webkite-pagination-area{margin-top: $mainGutter;}
+
+    .webkite-dataset-name {
+      text-align:center;
+      font-size:20px;
+      }
+    .webkite-embed-wrapper .webkite-embed-show {
+      display:block;
+      text-align:center;
+      }
+    }
+  
+  #webkite-results.sm{
+    .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{ width: 100%; }
+    .sort-menu{width: 95%;}
+    .webkite-sort-area+.webkite-filter-area{ margin-top: $mainGutter;}
+    .webkite-filter-area,
+    .webkite-sort-area + .webkite-filter-area{
+      margin-left: 0;
+      padding-left: 0;
+      }
+    }
+
+  }

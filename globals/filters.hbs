@@ -1,0 +1,53 @@
+{{~#if (select facets filterable=true type="Enum")~}}
+  <div class="webkite-filter-area">
+    <div class="webkite-applied-filters">
+      <div class="webkite-primary-filter-menu">
+        <button class="webkite-toggle" data-target=".filter-menu" type="button" title="{{t "Filter" default="Filter"}}"><span class="webkite-toggle" data-target=".filter-menu">{{t "Filter" default="Filter"}}</span><i></i></button>
+        <ul class="filter-menu webkite-hide webkite-menu">
+          {{#each (select facets filterable=true type="Enum")}}
+            <li><span class="webkite-link">{{displayName}}</span>
+              <ul class="filter-menu-child">
+                {{~#each values~}}
+                  <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".filter-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+                {{~/each~}}
+              </ul>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+        
+      <div class="current-filters">
+        <a href="#" class="webkite-clear-filters"></a>
+        <div class="filter-token-wrapper webkite-overflow-hidden-left webkite-toggle-hover" data-replace="true" data-target=".webkite-truncated + .all-current-filters">
+          {{~#each (select filters.currentFilters type="Enum")}}
+            {{~#if @first~}}<span>{{t "by" default="by"}}</span>{{~/if~}}
+            <div class="filter-group-{{@index}}">
+              {{~#each values~}}
+                <a href="#" class="webkite-remove-filter" data-facet="{{../facet}}" data-operator="{{../operator}}" data-value="{{this}}" title="{{this}}">{{this}}</a>
+                {{~#unless @last}}<span>{{t "or" default="or"}}</span>{{/unless~}}
+              {{~/each~}}
+            </div>
+            {{~#unless @last}}<span>{{t "and" default="and"}}</span>{{/unless~}}
+          {{~/each~}}
+        </div><!-- filter-token-wrapper -->
+      
+        <div class="all-current-filters webkite-hide">
+          <a href="#" class="webkite-clear-filters"></a>
+          <div class="all-filters-wrapper">
+            {{~#each (select filters.currentFilters type="Enum")}}
+              {{~#if @first~}}<span>{{t "by" default="by"}}</span>{{~/if~}}
+              <div class="filter-group-{{@index}}">
+                {{~#each values~}}
+                  <a href="#" class="webkite-remove-filter" data-facet="{{../facet}}" data-operator="{{../operator}}" data-value="{{this}}" title="{{this}}">{{this}}</a>
+                  {{~#unless @last}}<span>{{t "or" default="or"}}</span>{{/unless~}}
+                {{~/each~}}
+              </div>
+              {{~#unless @last}}<span>{{t "and" default="and"}}</span>{{/unless~}}
+            {{~/each~}}
+          </div><!-- all-current-filters-->
+        </div><!-- all-current-filters -->
+      </div><!-- current-filters -->
+        
+    </div><!-- webkite-applied-filters -->
+  </div><!-- webkite-filter-area -->
+{{/if}}

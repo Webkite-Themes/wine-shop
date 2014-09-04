@@ -1,0 +1,13 @@
+{{~#unless (equals pages 1)}}
+  {{~#if pages~}}
+    <nav class="webkite-results-paginator" role="pagnation">
+      <a href="{{permalink page='1'}}" data-page="1" class="first-result-page {{#if (equals page 1)}}disabled{{/if}}" {{#if (equals page 1)}}disabled=""{{/if}}>&#171</a>
+      <a href="{{permalink page=prevPage}}" data-page="{{prevPage}}" class="previous-result-page {{#if (equals page 1)}}disabled{{/if}}" {{#if (equals page 1)}}disabled=""{{/if}}>&#8249</a>
+      <p>
+        {{t "page" default="page"}} <input class="webkite-page-input" type="number" value="{{page}}" min="1" max="{{pages}}"/> <em>{{t "of" default="of"}}</em> {{pages}}
+      </p>
+      <a href="{{permalink page=nextPage}}" data-page="{{nextPage}}" class="next-result-page {{#if (equals page pages)}}disabled{{/if}}" {{#if (equals page pages)}}disabled=""{{/if}}>&#8250</a>
+      <a href="{{permalink page=pages}}" data-page="{{pages}}" class="last-result-page {{#if (equals page pages)}}disabled{{/if}}" {{#if (equals page pages)}}disabled=""{{/if}}>&#187</a>
+    </nav>
+  {{~/if~}}
+{{/unless~}}

@@ -1,0 +1,6 @@
+{{#any (find facets filterable=true type="Enum") (find facets sortable=true)}}
+  <header class="webkite-results-header">
+    {{>sorts~}}
+    {{>filters}}
+  </header>
+{{/any}}

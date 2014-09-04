@@ -1,0 +1,12 @@
+{{#if embedCode}}
+  <div class="webkite-embed-wrapper">
+    <a href="#webkite-embedder" class="webkite-embed-show">{{t "Embed" default="Embed"}} &lt;/&gt;</a>
+    <div id="webkite-embedder" class="webkite-embed">
+      <a href="#" class="webkite-embed-select" title='{{t "Select All" default="Select All"}}'>{{t "Select All" default="Select All"}}</a>
+      <div class="webkite-embed-input">
+        <input id='webkiteEmbedInput' class="webkite-embed-input" type='text' value='{{embedCode}}' readonly />
+      </div>
+      <a href="#" class="webkite-embed-hide">X</a>
+    </div>
+  </div>
+{{/if}}
