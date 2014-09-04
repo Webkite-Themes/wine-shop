@@ -1,0 +1,51 @@
+theme:
+  name: wine-shop-landscape
+  
+settings:
+  embeddable:
+    true
+  pagination:
+    - 10
+    - 25
+    - 50
+    - 100
+    
+assets:
+  preview-images:
+    light:
+      small: light-small.png
+      large: light-large.png
+    dark:
+      small: dark-small.png
+      large: dark-large.png
+
+  images:
+    - select-close.png
+    - select-close-dark.png
+    - angle-light.png
+    - angle-dark.png
+    - plus-light.png
+    - plus-dark.png
+    - branding-light.svg
+    - branding-dark.svg
+    - clear-all-icon.png
+    - sort-direction.png
+    - gradient-fallback-light.png
+    - gradient-fallback-dark.png
+  
+  stylesheets:
+    - light.css
+    - dark.css
+  
+  templates:
+    - results.handlebars.js
+  
+  partials:
+    - name.handlebars.js
+    - embed.handlebars.js
+    - header.handlebars.js
+    - filters.handlebars.js
+    - sorts.handlebars.js
+    - noresult.handlebars.js
+    - footer.handlebars.js
+    - paginator.handlebars.js

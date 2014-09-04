@@ -1,0 +1,324 @@
+$colorVariant:light;
+
+$imageWidthSm: 150px;
+$imageWidthMd: 100px;
+
+@import url("//fonts.googleapis.com/css?family=Libre+Baskerville:400,700");
+
+//CALL UNIVERSALS
+@import '../globals/universals';
+
+/* RESET */
+#webkite-results{
+  @include resetThings;
+  }
+
+/****************************************** BEGIN STYLES */
+#webkite-results{
+  background: $backgroundColor;
+  border: 1px solid $lighterOpacity;
+  @include roundedUp(10px);
+  @include boxedUp;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: $mainGutter;
+  font: 400 14px/normal 'Open Sans', 'Arial', sans-serif;
+  a{color:$linkColor;
+    text-decoration: none; 
+    &:hover{color: $linkHover;}
+    }
+  &.webkite-fade-out img{opacity: .5;}
+  }
+  
+/* TYPOGRAPHY */
+#webkite-results{
+  h1, h2, h3, h4{margin: 0;}
+  h2{
+    @include hyphenGreat;
+    font: 700 18px/1.1 'Libre Baskerville', 'Georgia', serif;
+    color: $medOpacity;
+    margin-bottom: $mainGutter/5;
+    }
+  p, li{color: $lightOpacity;}
+  }
+
+//*******************************************UNIVERSALS
+@include universalStyles;
+  
+/********************************************** BLOCKS */
+#webkite-results{
+  .webkite-block-group {
+    @include boxedUp;
+    margin-left:-$mainGutter;
+    vertical-align: top;
+    text-align: left;
+    position:relative;
+    }
+  .webkite-block{
+    @include boxedUp;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    padding-left: $mainGutter;
+    width:100%;
+    &.webkite-block-thirty {width:30%;}
+    &.webkite-block-forty {width:40%;}
+    &.webkite-block-fifty {width:50%;}
+    &.webkite-block-sixty {width:60%;}
+    &.webkite-block-seventy {width:70%;}
+    }
+  .webkite-wine-block{
+    color:$lightOpacity;
+    padding:0;
+    margin:8px 0 0 0;
+    list-style:none;
+    display:block;
+    li {
+      padding:0;
+      margin:0;
+      list-style:none;
+      line-height:1.2em;
+      display:block;
+      }
+    }
+  }
+  
+/************************************ LANDSCAPE RESULTS */
+#webkite-results{
+  .webkite-group-name{
+    color:$medOpacity;
+    font-family: 'Libre Baskerville', 'Georgia', serif;
+    font-size:24px;
+    font-weight:normal;
+    line-height:1em;
+    padding:0;
+    margin:0 0 $mainGutter;
+    }
+  .webkite-result {
+    padding-bottom:$mainGutter;
+    margin-bottom:$mainGutter;
+    border-bottom: 1px dotted $lighterOpacity;
+    text-align: justify;
+    position: relative;
+    line-height:1.2em;
+    }
+  .webkite-image-wrapper{
+    text-align: right;
+    display:inline-block;
+    vertical-align:top;
+    width:100%;
+    img {
+      max-width: 100%;
+      height: auto;
+      display:block;
+      }    
+    + .webkite-result-body {
+      @include boxedUp;
+      display:inline-block;
+      position:relative;
+      width:100%;
+      }
+    }
+  .webkite-wine-name {display:inline-block;}
+  .webkite-subheadline {
+    margin-bottom:$mainGutter/10;
+    font-family: 'Libre Baskerville', 'Georgia', serif;
+    font-style:italic;
+    font-size:0.9em;
+    line-height:1.1;
+    color:$lightOpacity;
+    &:empty{display:none;}
+    }
+  .webkite-headline {margin-bottom:0; line-height:1.2;}
+  .webkite-vintage + .webkite-varietal:before {
+    content:'\2022';
+    color:$lightOpacity;
+    padding:0 $mainGutter/5 0 $mainGutter/4;
+    opacity:0.3;
+    font-style:normal;
+    }
+  .webkite-providence {
+    color:$lightOpacity;
+    span {opacity:0.5;}
+    &:empty {display:none;}
+    a + a:before, 
+    span + span:before, 
+    a + span:before, 
+    span + a:before {content: ", ";}
+    }
+  .webkite-prices {
+    width:100%;
+    & > .webkite-block {
+      text-align:center;
+      }
+    }
+  .webkite-price{
+    display: inline-block;
+    font-family:'Libre Baskerville', 'Georgia', serif;
+    font-size:1.3em;
+    line-height:1;
+    width: 100%;
+    color:$medOpacity;
+    }
+  .webkite-price-value {
+    display:inline-block;
+    max-width:100%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    }
+  .webkite-price-label{
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-size:0.65em;
+    text-transform: uppercase;
+    display:inline-block;
+    color: $lightOpacity;
+    padding:2px 0;
+    margin:-2px 0;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    }
+  .webkite-wine-extra-detail {
+    li{
+      display:inline-block;
+      + li {
+        &:before{
+          padding-left:$mainGutter/3;
+          padding-right:$mainGutter/3;
+          content:'\2022';
+          color:$lightOpacity;
+          opacity:0.3;
+          font-style:normal;
+          font-size:16px;
+          line-height:14px;
+          position:relative;
+          top:1px;
+          }
+        }
+      }
+    }
+  }
+  
+/* single prices layout shift */
+#webkite-results .webkite-prices-single {
+  > .webkite-block-seventy {width:85%;}
+  > .webkite-block-thirty {width:15%;}
+  .webkite-prices > .webkite-block {width:100%;}
+  }
+
+/******************************************* NO RESULTS */
+#webkite-results{
+  .webkite-no-results{
+    padding: $mainGutter 0;
+    margin-bottom: $mainGutter;
+    border-bottom: 1px dotted $lighterOpacity;
+    }
+  }
+  
+/************************************** ELEMENT QUERIES */
+#webkite-results.xs{
+  .webkite-block{
+    width: 100%;
+    padding-right: 0;
+    }
+  .webkite-image-wrapper {
+    margin-bottom:$mainGutter/2.5;
+    img {
+      width:100%;
+      }
+    }
+  .webkite-result-body{
+    .webkite-prices {
+      margin-top:8px;
+      width:auto;
+      & > .webkite-block {
+        width:50%;
+        display:inline-block;
+        vertical-align:top;
+        text-align:left;
+        }
+      }
+    .webkite-price{
+      display: inline;
+      font-size:1.3em;
+      text-align:left;
+      }
+    .webkite-price-value {
+      vertical-align:bottom;
+      }
+    .webkite-price-label{
+      font-size:12px;
+      display:inline-block;
+      width:auto;
+      overflow:hidden;
+      vertical-align:bottom;
+      position:relative;
+      top:-1px;
+      }
+    }
+  }
+  
+#webkite-results.sm{
+  .webkite-image-wrapper{
+    width: $imageWidthSm;
+    margin-right:-$imageWidthSm;
+    + .webkite-result-body {padding-left:$imageWidthSm + $mainGutter;}
+    }
+  .webkite-block.webkite-block-seventy {width:100%;}
+  .webkite-result-body{
+    .webkite-prices {
+      margin-top:8px;
+      width:auto;
+      & > .webkite-block {
+        display:inline-block;
+        vertical-align:top;
+        text-align:left;
+        }
+      }
+    .webkite-price{
+      display: inline;
+      font-size:1.3em;
+      text-align:left;
+      }
+    .webkite-price-value {
+      vertical-align:bottom;        
+      }
+    .webkite-price-label{
+      font-size:12px;
+      display:inline-block;
+      width:auto;
+      overflow:hidden;
+      vertical-align:bottom;
+      position:relative;
+      top:-1px;
+      }
+    }
+  }
+
+#webkite-results.md{
+  .webkite-image-wrapper{
+    width: $imageWidthMd;
+    margin-right:-$imageWidthMd;
+    + .webkite-result-body {
+      padding-left:$imageWidthMd + $mainGutter;
+      }
+    }
+  .webkite-prices-wrap {padding-left:0;}
+  .webkite-prices {margin-left:0;}
+  .webkite-price-label {width:100%; display:block; margin-bottom:2px;}
+  }
+
+/*************************** DISPLAY RULES */
+#webkite-results.xs {
+  .md-only {display:none;}
+  .until-md {display:block;}
+  }
+#webkite-results.sm {
+  .md-only {display:none;}
+  .until-md {display:block;}
+  }
+#webkite-results.md {
+  .until-md {display:none;}
+  }
