@@ -176,7 +176,6 @@ $itemBackground: rgba(255,255,255,.5);
     }
   .webkite-providence {
     color:$lightOpacity;
-    span {opacity:0.5;}
     &:empty {display:none;}
     a + a:before, 
     span + span:before, 

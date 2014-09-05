@@ -717,8 +717,6 @@
   display: inline-block; }
 #webkite-results .webkite-providence {
   color: rgba(0, 0, 0, 0.6); }
-  #webkite-results .webkite-providence span {
-    opacity: 0.5; }
   #webkite-results .webkite-providence:empty {
     display: none; }
   #webkite-results .webkite-providence a + a:before, #webkite-results .webkite-providence span + span:before, #webkite-results .webkite-providence a + span:before, #webkite-results .webkite-providence span + a:before {

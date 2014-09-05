@@ -179,7 +179,6 @@ $lighterOpacity: rgba(255,255,255,.15);
     }
   .webkite-providence {
     color:$lightOpacity;
-    span {opacity:0.75;}
     &:empty {display:none;}
     a + a:before, 
     span + span:before, 
