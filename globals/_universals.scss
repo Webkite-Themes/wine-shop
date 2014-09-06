@@ -601,8 +601,14 @@ $tokenFifth: #6f7ca8;
       border: 1px solid $lighterOpacity;
       @if $colorVariant == light{color: $lightOpacity;} 
       @if $colorVariant == dark{color: $lightOpacity/2;} 
+      display:inline-block;
       padding: $mainGutter/4;
       -moz-appearance:textfield;
+      -moz-box-shadow:none;
+      -webkit-box-shadow:none;
+      box-shadow:none;
+      box-sizing:content-box;
+      margin:0;
       max-width: 1.5em; 
       font-size: .9em;
       line-height:16px;
