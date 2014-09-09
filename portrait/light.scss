@@ -435,11 +435,9 @@ $itemBackground: rgba(255,255,255,.5);
 /************************************** ELEMENT QUERIES */
 #webkite-results.xs{
   .webkite-result-wrapper {width:100%;}
-  .webkite-block.webkite-block-seventy {width:100%;}
   }
   
 #webkite-results.sm{
-  .webkite-block.webkite-block-seventy {width:100%;}
   .webkite-result-wrapper {width:50%;}    
   }
   
@@ -553,6 +551,8 @@ $itemBackground: rgba(255,255,255,.5);
           padding-left:$imageWidthMd + $mainGutter;
           }
         }
+      .webkite-block.webkite-block-seventy {width:65%;}
+      .webkite-block.webkite-block-thirty {width:35%;}
       .webkite-prices-wrap {padding-left:0;}
       .webkite-prices {margin-left:0;}
       .webkite-price-label {width:100%; display:block; margin-bottom:2px;}

@@ -951,11 +951,7 @@
 /************************************** ELEMENT QUERIES */
 #webkite-results.xs .webkite-result-wrapper {
   width: 100%; }
-#webkite-results.xs .webkite-block.webkite-block-seventy {
-  width: 100%; }
 
-#webkite-results.sm .webkite-block.webkite-block-seventy {
-  width: 100%; }
 #webkite-results.sm .webkite-result-wrapper {
   width: 50%; }
 
@@ -1054,6 +1050,10 @@
     margin-right: -100px; }
     #webkite-results .webkite-modal-content .webkite-image-wrapper + .webkite-result-body {
       padding-left: 120px; }
+  #webkite-results .webkite-modal-content .webkite-block.webkite-block-seventy {
+    width: 65%; }
+  #webkite-results .webkite-modal-content .webkite-block.webkite-block-thirty {
+    width: 35%; }
   #webkite-results .webkite-modal-content .webkite-prices-wrap {
     padding-left: 0; }
   #webkite-results .webkite-modal-content .webkite-prices {
