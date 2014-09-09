@@ -192,7 +192,7 @@ $tokenFifth: #6f7ca8;
 //
 @mixin universalStyles{
   /******************************************** NAVIGATIONALS */
-  #webkite-results{
+  #webkite-results.#{$themeName}{
   
     .webkite-results-header, .webkite-results-footer{
       text-align: justify;
@@ -227,7 +227,8 @@ $tokenFifth: #6f7ca8;
     }
 
   /************************************** DATASET NAME & EMBED */
-  #webkite-results{
+  #webkite-results.#{$themeName}{
+  
     .webkite-dataset-name {
       color:$medOpacity;
       font-size:22px;
@@ -307,7 +308,7 @@ $tokenFifth: #6f7ca8;
   }  
     
   /************************************** SORTS AND FILTERS */
-  #webkite-results{
+  #webkite-results.#{$themeName}{
   
     .webkite-sort-area > .webkite-toggle,
     .webkite-primary-filter-menu > .webkite-toggle{
@@ -451,7 +452,7 @@ $tokenFifth: #6f7ca8;
     }
     
   /**************************************** SORT/FILTER MENU */
-  #webkite-results{
+  #webkite-results.#{$themeName}{
     .sort-menu, .filter-menu{
       @include roundedUp(3px);
       @include shadowHere;
@@ -535,7 +536,7 @@ $tokenFifth: #6f7ca8;
     }    
     
   /******************************* FILTER OVERVIEW AND SHADE */
-  #webkite-results{
+  #webkite-results.#{$themeName}{
     
     .filter-token-wrapper.webkite-truncated:before{
       content: "";
@@ -568,7 +569,7 @@ $tokenFifth: #6f7ca8;
     }
   
   /********************************************* PAGINATION */
-  #webkite-results{
+  #webkite-results.#{$themeName}{
     
     .webkite-pagination-area{
       @include boxedUp;
@@ -626,7 +627,7 @@ $tokenFifth: #6f7ca8;
     }
     
   /************************************** ELEMENT QUERIES */
-  #webkite-results.xs{
+  #webkite-results.xs.#{$themeName}{
     .webkite-branding-area, .webkite-pagination-area{
       width: 100%;
       padding: 0;
@@ -653,7 +654,7 @@ $tokenFifth: #6f7ca8;
       }
     }
   
-  #webkite-results.sm{
+  #webkite-results.sm.#{$themeName}{
     .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{ width: 100%; }
     .sort-menu{width: 95%;}
     .webkite-sort-area+.webkite-filter-area{ margin-top: $mainGutter;}
