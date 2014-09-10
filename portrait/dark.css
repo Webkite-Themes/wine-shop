@@ -1008,9 +1008,7 @@
       width: 100%;
       padding-right: 0; }
     #webkite-results .webkite-modal-content .webkite-image-wrapper {
-      margin-bottom: 10px;
-      width: 100%;
-      margin-right: 0; }
+      display: none; }
       #webkite-results .webkite-modal-content .webkite-image-wrapper + .webkite-result-body {
         padding-left: 0; }
       #webkite-results .webkite-modal-content .webkite-image-wrapper img {

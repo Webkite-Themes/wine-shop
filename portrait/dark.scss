@@ -499,9 +499,7 @@ $lighterOpacity: rgba(255,255,255,.15);
         padding-right: 0;
         }
       .webkite-image-wrapper {
-        margin-bottom:$mainGutter/2;
-        width:100%;
-        margin-right:0;
+        display:none;
         + .webkite-result-body {padding-left:0;}
         img {
           width:100%;
