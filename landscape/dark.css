@@ -774,7 +774,8 @@
   font-size: 1.3em;
   text-align: left; }
 #webkite-results.xs .webkite-result-body .webkite-price-value {
-  vertical-align: bottom; }
+  vertical-align: bottom;
+  line-height: inherit; }
 #webkite-results.xs .webkite-result-body .webkite-list-price-value {
   padding-top: 5px;
   margin-top: 0; }
@@ -806,7 +807,8 @@
   font-size: 1.3em;
   text-align: left; }
 #webkite-results.sm .webkite-result-body .webkite-price-value {
-  vertical-align: bottom; }
+  vertical-align: bottom;
+  line-height: inherit; }
 #webkite-results.sm .webkite-result-body .webkite-list-price-value {
   padding-top: 5px;
   margin-top: 0; }

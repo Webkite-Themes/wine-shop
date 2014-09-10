@@ -262,6 +262,7 @@ $imageWidthMd: 100px;
       }
     .webkite-price-value {
       vertical-align:bottom;
+      line-height:inherit;     
       }
     .webkite-list-price-value{
       padding-top:$mainGutter/4;
@@ -303,6 +304,7 @@ $imageWidthMd: 100px;
       }
     .webkite-price-value {
       vertical-align:bottom;        
+      line-height:inherit;     
       }
     .webkite-list-price-value{
       padding-top:$mainGutter/4;
