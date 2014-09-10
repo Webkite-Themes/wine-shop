@@ -830,6 +830,8 @@
   padding-left: 0; }
 #webkite-results.md .webkite-prices {
   margin-left: 0; }
+#webkite-results.md .webkite-list-price-value {
+  margin-top: 1px; }
 #webkite-results.md .webkite-price-label {
   width: 100%;
   display: block; }

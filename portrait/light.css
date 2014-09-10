@@ -885,6 +885,7 @@
     display: inline-block;
     font-weight: bold;
     line-height: 1.2;
+    padding-top: 0;
     max-width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -1074,6 +1075,9 @@
     padding-left: 0; }
   #webkite-results .webkite-modal-content .webkite-prices {
     margin-left: 0; }
+  #webkite-results .webkite-modal-content .webkite-list-price-value {
+    margin-top: 1px;
+    padding-top: 2px; }
   #webkite-results .webkite-modal-content .webkite-price-label {
     width: 100%;
     display: block; }
