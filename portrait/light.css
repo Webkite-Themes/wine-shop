@@ -715,6 +715,8 @@
   font-style: normal; }
 #webkite-results .webkite-varietal > a {
   display: inline-block; }
+#webkite-results .webkite-varietal wbr:after {
+  content: "\00200B"; }
 #webkite-results .webkite-providence {
   color: rgba(0, 0, 0, 0.6); }
   #webkite-results .webkite-providence:empty {
