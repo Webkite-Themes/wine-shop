@@ -206,6 +206,19 @@ $lighterOpacity: rgba(255,255,255,.15);
     text-overflow:ellipsis;
     white-space:nowrap;
     }
+  .webkite-list-price-value{
+    display:block;
+    font-weight:normal;
+    font-size:14px;
+    line-height:1em;
+    padding: 5px 0 2px;
+    margin:0 0 -2px;
+    max-width:100%;
+    opacity:0.65;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    }
   .webkite-price-label{
     display:block;
     font-family: 'Open Sans', 'Arial', sans-serif;
@@ -312,7 +325,7 @@ $lighterOpacity: rgba(255,255,255,.15);
       line-height:1.2em;
       }
     .webkite-subheadline {
-      margin-bottom:$mainGutter/10;
+      margin-bottom:0;
       font-family: 'Libre Baskerville', 'Georgia', serif;
       font-style:italic;
       font-size:0.9em;
@@ -328,6 +341,7 @@ $lighterOpacity: rgba(255,255,255,.15);
       }
     .webkite-prices {
       width:100%;
+      margin-top:0;
       & > .webkite-block {
         text-align:center;
         }
@@ -554,7 +568,7 @@ $lighterOpacity: rgba(255,255,255,.15);
       .webkite-block.webkite-block-thirty {width:35%;}
       .webkite-prices-wrap {padding-left:0;}
       .webkite-prices {margin-left:0;}
-      .webkite-price-label {width:100%; display:block; margin-bottom:2px;}
+      .webkite-price-label {width:100%; display:block;}
       .until-md {display:none!important;}
       .md-only {display:inline-block!important;}  
       }

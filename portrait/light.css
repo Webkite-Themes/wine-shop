@@ -739,6 +739,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
+#webkite-results .webkite-list-price-value {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1em;
+  padding: 5px 0 2px;
+  margin: 0 0 -2px;
+  max-width: 100%;
+  opacity: 0.5;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
 #webkite-results .webkite-price-label {
   display: block;
   font-family: 'Open Sans', 'Arial', sans-serif;
@@ -844,10 +856,10 @@
     padding: 0;
     line-height: 1.2em; }
   #webkite-results .webkite-modal-content .webkite-subheadline {
-    margin-bottom: 2px;
+    margin-bottom: 0;
     font-family: 'Libre Baskerville', 'Georgia', serif;
     font-style: italic;
-    font-size: 0.9em;
+    font-size: 13px;
     line-height: 1.1;
     color: rgba(0, 0, 0, 0.7);
     text-align: left; }
@@ -858,25 +870,29 @@
     line-height: 1.2;
     text-align: left; }
   #webkite-results .webkite-modal-content .webkite-prices {
-    width: 100%; }
+    width: 100%;
+    margin-top: 0; }
     #webkite-results .webkite-modal-content .webkite-prices > .webkite-block {
       text-align: center; }
   #webkite-results .webkite-modal-content .webkite-price {
     display: inline-block;
     font-family: 'Libre Baskerville', 'Georgia', serif;
-    font-size: 1.3em;
+    font-size: 18px;
     line-height: 1;
     width: 100%;
     color: rgba(0, 0, 0, 0.7); }
   #webkite-results .webkite-modal-content .webkite-price-value {
     display: inline-block;
+    font-weight: bold;
+    line-height: 1.2;
     max-width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
   #webkite-results .webkite-modal-content .webkite-price-label {
     font-family: 'Open Sans', 'Arial', sans-serif;
-    font-size: 0.65em;
+    font-size: 13px;
+    line-height: 1.1;
     text-transform: uppercase;
     display: inline-block;
     color: rgba(0, 0, 0, 0.7);
@@ -1058,8 +1074,7 @@
     margin-left: 0; }
   #webkite-results .webkite-modal-content .webkite-price-label {
     width: 100%;
-    display: block;
-    margin-bottom: 2px; }
+    display: block; }
   #webkite-results .webkite-modal-content .until-md {
     display: none !important; }
   #webkite-results .webkite-modal-content .md-only {
