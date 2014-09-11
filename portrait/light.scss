@@ -12,12 +12,12 @@ $itemBackground: rgba(255,255,255,.5);
 @import '../globals/universals';
 
 /* RESET */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   @include resetThings;
   }
 
 /****************************************** BEGIN STYLES */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   background: $backgroundColor;
   background-clip: padding-box;
   border: 1px solid $lighterOpacity;
@@ -36,7 +36,7 @@ $itemBackground: rgba(255,255,255,.5);
   }
   
 /* TYPOGRAPHY */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   h2{
     @include hyphenGreat;
     font: 700 18px/1.1em 'Libre Baskerville', 'Georgia', serif;
@@ -50,7 +50,7 @@ $itemBackground: rgba(255,255,255,.5);
 @include universalStyles;
   
 /********************************************** BLOCKS */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   .webkite-block-group {
     @include boxedUp;
     margin-left:-$mainGutter;
@@ -88,7 +88,7 @@ $itemBackground: rgba(255,255,255,.5);
   }
   
 /************************************ PORTRAIT RESULTS */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   .webkite-results-wrapper {
     margin-left:-$mainGutter;
     }
@@ -252,7 +252,7 @@ $itemBackground: rgba(255,255,255,.5);
   }
   
 /*************************************** DETAILS MODAL */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   .webkite-item-details{
     @include boxedUp;
     position: fixed;
@@ -430,7 +430,7 @@ $itemBackground: rgba(255,255,255,.5);
   }
 
 /* single prices layout shift */
-#webkite-results {
+#webkite-results.#{$themeName}.webkite-#{$colorVariant} {
   /* main content */
   .webkite-prices.webkite-prices-single {
     > .webkite-block {width:100%;}
@@ -445,7 +445,7 @@ $itemBackground: rgba(255,255,255,.5);
 
 
 /******************************************* NO RESULTS */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   .webkite-no-results{
     padding: 0 0 $mainGutter 0;
     margin-bottom: $mainGutter;
@@ -455,18 +455,18 @@ $itemBackground: rgba(255,255,255,.5);
   }
   
 /************************************** ELEMENT QUERIES */
-#webkite-results.xs{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.xs{
   .webkite-result-wrapper {width:100%;}
   }
   
-#webkite-results.sm{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.sm{
   .webkite-result-wrapper {width:50%;}    
   }
   
 /* modal sizings */
 @media screen and (max-width: 680px){
   //sm
-  #webkite-results{
+  #webkite-results.#{$themeName}.webkite-#{$colorVariant}{
     .webkite-item-details{width:100%; left:0; margin-left:0;}
     .webkite-modal-content {
       .webkite-image-wrapper{
@@ -512,7 +512,7 @@ $itemBackground: rgba(255,255,255,.5);
 }
 @media screen and (max-width:470px){
   //xs
-  #webkite-results{
+  #webkite-results.#{$themeName}.webkite-#{$colorVariant}{
     .webkite-result-modal {padding-left:$mainGutter/4; padding-right:$mainGutter/4; padding-top:$mainGutter/2; padding-bottom:$mainGutter/2;}
     .webkite-modal-content {
       padding-right:$mainGutter/4;
@@ -564,7 +564,7 @@ $itemBackground: rgba(255,255,255,.5);
     }
 }
 @media screen and (min-width:681px){
-  #webkite-results{
+  #webkite-results.#{$themeName}.webkite-#{$colorVariant}{
     .webkite-modal-content {
       .webkite-image-wrapper{
         width: $imageWidthMd;
@@ -586,14 +586,14 @@ $itemBackground: rgba(255,255,255,.5);
 } 
 
 /*************************** DISPLAY RULES */
-#webkite-results.xs {
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.xs {
   .md-only {display:none;}
   .until-md {display:block;}
   }
-#webkite-results.sm {
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.sm {
   .md-only {display:none;}
   .until-md {display:block;}
   }
-#webkite-results.md {
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.md {
   .until-md {display:none;}
   }

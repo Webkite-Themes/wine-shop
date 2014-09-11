@@ -10,12 +10,12 @@ $imageWidthMd: 100px;
 @import '../globals/universals';
 
 /* RESET */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   @include resetThings;
   }
 
 /****************************************** BEGIN STYLES */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   background: $backgroundColor;
   border: 1px solid $lighterOpacity;
   @include roundedUp(10px);
@@ -32,7 +32,7 @@ $imageWidthMd: 100px;
   }
   
 /* TYPOGRAPHY */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   h1, h2, h3, h4{margin: 0;}
   h2{
     @include hyphenGreat;
@@ -47,7 +47,7 @@ $imageWidthMd: 100px;
 @include universalStyles;
   
 /********************************************** BLOCKS */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   .webkite-block-group {
     @include boxedUp;
     margin-left:-$mainGutter;
@@ -85,7 +85,7 @@ $imageWidthMd: 100px;
   }
   
 /************************************ LANDSCAPE RESULTS */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   .webkite-group-name{
     color:$medOpacity;
     font-family: 'Libre Baskerville', 'Georgia', serif;
@@ -218,14 +218,14 @@ $imageWidthMd: 100px;
   }
   
 /* single prices layout shift */
-#webkite-results .webkite-prices-single {
+#webkite-results.#{$themeName}.webkite-#{$colorVariant} .webkite-prices-single {
   > .webkite-block-seventy {width:85%;}
   > .webkite-block-thirty {width:15%;}
   .webkite-prices > .webkite-block {width:100%;}
   }
 
 /******************************************* NO RESULTS */
-#webkite-results{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   .webkite-no-results{
     padding: $mainGutter 0;
     margin-bottom: $mainGutter;
@@ -234,7 +234,7 @@ $imageWidthMd: 100px;
   }
   
 /************************************** ELEMENT QUERIES */
-#webkite-results.xs{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.xs{
   .webkite-block{
     width: 100%;
     padding-right: 0;
@@ -281,7 +281,7 @@ $imageWidthMd: 100px;
     }
   }
   
-#webkite-results.sm{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.sm{
   .webkite-image-wrapper{
     width: $imageWidthSm;
     margin-right:-$imageWidthSm;
@@ -323,7 +323,7 @@ $imageWidthMd: 100px;
     }
   }
 
-#webkite-results.md{
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.md{
   .webkite-image-wrapper{
     width: $imageWidthMd;
     margin-right:-$imageWidthMd;
@@ -338,14 +338,14 @@ $imageWidthMd: 100px;
   }
 
 /*************************** DISPLAY RULES */
-#webkite-results.xs {
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.xs {
   .md-only {display:none;}
   .until-md {display:block;}
   }
-#webkite-results.sm {
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.sm {
   .md-only {display:none;}
   .until-md {display:block;}
   }
-#webkite-results.md {
+#webkite-results.#{$themeName}.webkite-#{$colorVariant}.md {
   .until-md {display:none;}
   }
