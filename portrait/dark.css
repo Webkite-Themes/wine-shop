@@ -556,36 +556,36 @@
     -moz-appearance: textfield; }
 
 /************************************** ELEMENT QUERIES */
-#webkite-results.xs.wine-shop-portrait .webkite-branding-area, #webkite-results.xs.wine-shop-portrait .webkite-pagination-area {
+#webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-branding-area, #webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-pagination-area {
   width: 100%;
   padding: 0;
   margin: 0;
   text-align: center; }
-#webkite-results.xs.wine-shop-portrait .webkite-filter-area, #webkite-results.xs.wine-shop-portrait .webkite-sort-area, #webkite-results.xs.wine-shop-portrait .webkite-sort-area > .webkite-toggle {
+#webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-filter-area, #webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-sort-area, #webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-sort-area > .webkite-toggle {
   width: 100%; }
-#webkite-results.xs.wine-shop-portrait .sort-menu {
+#webkite-results.xs.wine-shop-portrait.webkite-dark .sort-menu {
   width: 95%; }
-#webkite-results.xs.wine-shop-portrait .webkite-sort-area + .webkite-filter-area {
+#webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-sort-area + .webkite-filter-area {
   margin-top: 20px; }
-#webkite-results.xs.wine-shop-portrait .webkite-filter-area, #webkite-results.xs.wine-shop-portrait .webkite-sort-area + .webkite-filter-area {
+#webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-filter-area, #webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-sort-area + .webkite-filter-area {
   margin-left: 0;
   padding-left: 0; }
-#webkite-results.xs.wine-shop-portrait .webkite-branding-area + .webkite-pagination-area {
+#webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-branding-area + .webkite-pagination-area {
   margin-top: 20px; }
-#webkite-results.xs.wine-shop-portrait .webkite-dataset-name {
+#webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-dataset-name {
   text-align: center;
   font-size: 20px; }
-#webkite-results.xs.wine-shop-portrait .webkite-embed-wrapper .webkite-embed-show {
+#webkite-results.xs.wine-shop-portrait.webkite-dark .webkite-embed-wrapper .webkite-embed-show {
   display: block;
   text-align: center; }
 
-#webkite-results.sm.wine-shop-portrait .webkite-filter-area, #webkite-results.sm.wine-shop-portrait .webkite-sort-area, #webkite-results.sm.wine-shop-portrait .webkite-sort-area > .webkite-toggle {
+#webkite-results.sm.wine-shop-portrait.webkite-dark .webkite-filter-area, #webkite-results.sm.wine-shop-portrait.webkite-dark .webkite-sort-area, #webkite-results.sm.wine-shop-portrait.webkite-dark .webkite-sort-area > .webkite-toggle {
   width: 100%; }
-#webkite-results.sm.wine-shop-portrait .sort-menu {
+#webkite-results.sm.wine-shop-portrait.webkite-dark .sort-menu {
   width: 95%; }
-#webkite-results.sm.wine-shop-portrait .webkite-sort-area + .webkite-filter-area {
+#webkite-results.sm.wine-shop-portrait.webkite-dark .webkite-sort-area + .webkite-filter-area {
   margin-top: 20px; }
-#webkite-results.sm.wine-shop-portrait .webkite-filter-area, #webkite-results.sm.wine-shop-portrait .webkite-sort-area + .webkite-filter-area {
+#webkite-results.sm.wine-shop-portrait.webkite-dark .webkite-filter-area, #webkite-results.sm.wine-shop-portrait.webkite-dark .webkite-sort-area + .webkite-filter-area {
   margin-left: 0;
   padding-left: 0; }
 
