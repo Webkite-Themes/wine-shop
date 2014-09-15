@@ -627,7 +627,7 @@ $tokenFifth: #6f7ca8;
     }
     
   /************************************** ELEMENT QUERIES */
-  #webkite-results.xs.#{$themeName}{
+  #webkite-results.xs.#{$themeName}.webkite-#{$colorVariant}{
     .webkite-branding-area, .webkite-pagination-area{
       width: 100%;
       padding: 0;
@@ -654,7 +654,7 @@ $tokenFifth: #6f7ca8;
       }
     }
   
-  #webkite-results.sm.#{$themeName}{
+  #webkite-results.sm.#{$themeName}.webkite-#{$colorVariant}{
     .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{ width: 100%; }
     .sort-menu{width: 95%;}
     .webkite-sort-area+.webkite-filter-area{ margin-top: $mainGutter;}
