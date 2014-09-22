@@ -275,6 +275,9 @@ $lighterOpacity: rgba(255,255,255,.15);
     padding: $mainGutter $mainGutter/5*2 $mainGutter $mainGutter/4*3;
     position:relative;
     max-height:100%;
+    &:focus{
+      outline:0;
+      }
     .webkite-toggle-item{
       position:absolute;
       height:24px;

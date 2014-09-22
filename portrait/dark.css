@@ -816,6 +816,8 @@
   padding: 20px 8px 20px 15px;
   position: relative;
   max-height: 100%; }
+  #webkite-results.wine-shop-portrait.webkite-dark .webkite-result-modal:focus {
+    outline: 0; }
   #webkite-results.wine-shop-portrait.webkite-dark .webkite-result-modal .webkite-toggle-item {
     position: absolute;
     height: 24px;
