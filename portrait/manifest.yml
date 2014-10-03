@@ -15,9 +15,11 @@ assets:
     light:
       small: light-small.png
       large: light-large.png
+      x-large: light-@2x.png
     dark:
       small: dark-small.png
       large: dark-large.png
+      x-large: dark-@2x.png
 
   images:
     - select-close.png
