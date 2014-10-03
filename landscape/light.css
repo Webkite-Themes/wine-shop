@@ -91,6 +91,11 @@
 #webkite-results.wine-shop-landscape.webkite-light p, #webkite-results.wine-shop-landscape.webkite-light li {
   color: rgba(0, 0, 0, 0.6); }
 
+/******************************************** GENERAL */
+#webkite-results.wine-shop-landscape.webkite-light {
+  text-align: left;
+  direction: ltr; }
+
 /******************************************** NAVIGATIONALS */
 #webkite-results.wine-shop-landscape.webkite-light .webkite-results-header, #webkite-results.wine-shop-landscape.webkite-light .webkite-results-footer {
   text-align: justify;
