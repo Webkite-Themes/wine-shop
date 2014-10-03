@@ -187,10 +187,16 @@ $tokenFifth: #6f7ca8;
 
   }
 
-//*****************************FILTER SORT AND PAGINATION STYLES
+//***************************** Universals
 //
 //
 @mixin universalStyles{
+  /******************************************** GENERAL */
+  #webkite-results.#{$themeName}.webkite-#{$colorVariant}{
+    text-align:left;
+    direction:ltr;
+    }
+    
   /******************************************** NAVIGATIONALS */
   #webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   
