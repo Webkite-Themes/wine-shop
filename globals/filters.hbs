@@ -7,7 +7,7 @@
           {{#each (select facets filterable=true type="Enum")}}
             <li><span class="webkite-link">{{displayName}}</span>
               <ul class="filter-menu-child">
-                {{~#each values~}}
+                {{~#each (collate values)~}}
                   <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".filter-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
                 {{~/each~}}
               </ul>
