@@ -259,11 +259,10 @@ $lighterOpacity: rgba(255,255,255,.15);
   .webkite-item-details{
     @include boxedUp;
     position: fixed;
-    width: 680px;
+    width: 640px;
     left:50%;
-    top:0;
-    margin-left:-340px;
-    padding: $mainGutter;
+    top:$mainGutter;
+    margin-left:-320px;
     z-index: 999999;
     }
   .webkite-result-modal{
@@ -473,7 +472,7 @@ $lighterOpacity: rgba(255,255,255,.15);
 @media screen and (max-width: 680px){
   //sm
   #webkite-results.#{$themeName}.webkite-#{$colorVariant}{
-    .webkite-item-details{width:100%; left:0; margin-left:0;}
+    .webkite-item-details{width:auto; left:$mainGutter; right:$mainGutter; margin-left:0;}
     .webkite-modal-content {
       .webkite-image-wrapper{
         width: $imageWidthMd;

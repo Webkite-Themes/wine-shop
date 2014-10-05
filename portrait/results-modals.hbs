@@ -1,8 +1,8 @@
 {{#each this.items~}}
-  <div id="{{this.id}}" class="webkite-item-details webkite-modal">
+  <div id="{{this.id}}" class="webkite-item-details webkite-modal" role="dialog" aria-label="{{#facet name="Wine Name"}}{{displayValue}}{{/facet~}}">
     <div class="webkite-result-modal">
       <a href="#" data-id="{{this.id}}" class="webkite-toggle-item" data-animate="200ms" data-speed="100ms">x</a>
-      <div class="webkite-modal-content">
+      <div class="webkite-modal-content webkite-scrollable">
         <div class="webkite-result webkite-block-group{{#any (find ../facets name="Price Per Bottle" empty=true) (find ../facets name="Price Per Case" empty=true)}} webkite-prices-single{{/any}}">
         
           <div class="webkite-block webkite-block-seventy">
@@ -120,7 +120,7 @@
               {{/any}}
               
               {{#facet name="Tasting Notes"~}}<p class="webkite-wine-block">{{displayValue}}</p>{{~/facet}}
-              
+
               {{#any (find facets name="Bottles In Stock") (find facets name="Bottle Size") (find facets name="Rating")}}
                 <ul class="webkite-wine-block webkite-wine-extra-detail">
                   {{~#facet name="Rating"~}}

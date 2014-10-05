@@ -798,11 +798,10 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: fixed;
-  width: 680px;
+  width: 640px;
   left: 50%;
-  top: 0;
-  margin-left: -340px;
-  padding: 20px;
+  top: 20px;
+  margin-left: -320px;
   z-index: 999999; }
 #webkite-results.wine-shop-portrait.webkite-dark .webkite-result-modal {
   -webkit-box-sizing: border-box;
@@ -993,8 +992,9 @@
 /* modal sizings */
 @media screen and (max-width: 680px) {
   #webkite-results.wine-shop-portrait.webkite-dark .webkite-item-details {
-    width: 100%;
-    left: 0;
+    width: auto;
+    left: 20px;
+    right: 20px;
     margin-left: 0; }
   #webkite-results.wine-shop-portrait.webkite-dark .webkite-modal-content .webkite-image-wrapper {
     width: 100px;
