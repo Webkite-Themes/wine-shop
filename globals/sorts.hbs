@@ -1,6 +1,12 @@
 {{~#if (find facets sortable=true)~}}
   <div class="webkite-sort-area">
-    <button class="webkite-toggle" data-target=".sort-menu" type="button" title="{{t "Sort" default="Sort"}}"><span class="webkite-toggle" data-target=".sort-menu">{{t "Sort" default="Sort"}}</span><i></i></button>
+    <button class="webkite-toggle" data-target=".sort-menu" type="button" title="{{~#if sort.currentSort~}}{{t "Sorted by" default="Sorted by"}}: {{sort.currentSort}}{{~else~}}{{t "Sort" default="Sort"}}{{~/if~}}"><span class="webkite-toggle" data-target=".sort-menu">
+      {{~#if sort.currentSort~}}
+        {{sort.currentSort}}
+      {{~else~}}
+        {{t "Sort" default="Sort"}}
+      {{/if~}}
+    </span><i></i></button>
     <ul class="sort-menu webkite-menu webkite-hide">
       {{#unless sort.hideDefault~}}
         <li class="webkite-apply-sort{{#unless sort.currentSort}} active{{/unless}}">
