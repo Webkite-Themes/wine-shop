@@ -491,7 +491,7 @@ $tokenFifth: #6f7ca8;
         } 
       }
     /* directional arrow */
-    .sort-menu li.active a{
+    .sort-menu li.webkite-active a{
       position: relative;
       padding-right: $mainGutter*1.5;
       &.asc::after, &.desc::after{
