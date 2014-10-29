@@ -204,6 +204,9 @@ $tokenFifth: #6f7ca8;
     .webkite-results-header, .webkite-results-footer{
       text-align: justify;
       position: relative;
+      float:none;
+      width:auto;
+      display:block;
       .webkite-sort-area, .webkite-filter-area{
         display: inline-block;
         vertical-align:top;
