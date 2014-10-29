@@ -596,7 +596,7 @@ $tokenFifth: #6f7ca8;
       font-size:13px;
       line-height:1.2em;
       position:absolute;
-      z-index:9999;
+      z-index:2147483647;
       .webkite-tooltip-content{
         @include roundedUp(3px);
         color:$medOpacity;
