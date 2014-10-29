@@ -148,8 +148,14 @@ $tokenFifth: #6f7ca8;
     -o-transition: all 0 none;
     transition:none;
     }
+  header, footer{
+    float:none;
+    width:auto;
+    display:block;
+    }
   button, select, input{
     text-transform: none;
+    @include noShadows;
     &:active{@include noShadows;}  
     }
   button::-moz-focus-inner {
