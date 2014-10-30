@@ -25,8 +25,15 @@
     -ms-transition: none;
     -o-transition: all 0 none;
     transition: none; }
+  #webkite-results.wine-shop-landscape.webkite-light header, #webkite-results.wine-shop-landscape.webkite-light footer {
+    float: none;
+    width: auto;
+    display: block; }
   #webkite-results.wine-shop-landscape.webkite-light button, #webkite-results.wine-shop-landscape.webkite-light select, #webkite-results.wine-shop-landscape.webkite-light input {
-    text-transform: none; }
+    text-transform: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
     #webkite-results.wine-shop-landscape.webkite-light button:active, #webkite-results.wine-shop-landscape.webkite-light select:active, #webkite-results.wine-shop-landscape.webkite-light input:active {
       -moz-box-shadow: none;
       -webkit-box-shadow: none;
@@ -93,13 +100,17 @@
 
 /******************************************** GENERAL */
 #webkite-results.wine-shop-landscape.webkite-light {
+  position: relative;
   text-align: left;
   direction: ltr; }
 
 /******************************************** NAVIGATIONALS */
 #webkite-results.wine-shop-landscape.webkite-light .webkite-results-header, #webkite-results.wine-shop-landscape.webkite-light .webkite-results-footer {
   text-align: justify;
-  position: relative; }
+  position: relative;
+  float: none;
+  width: auto;
+  display: block; }
   #webkite-results.wine-shop-landscape.webkite-light .webkite-results-header .webkite-sort-area, #webkite-results.wine-shop-landscape.webkite-light .webkite-results-header .webkite-filter-area, #webkite-results.wine-shop-landscape.webkite-light .webkite-results-footer .webkite-sort-area, #webkite-results.wine-shop-landscape.webkite-light .webkite-results-footer .webkite-filter-area {
     display: inline-block;
     vertical-align: top; }
@@ -213,7 +224,7 @@
   /* filters */
   /* tokens */
   /* clear everything */ }
-  #webkite-results.wine-shop-landscape.webkite-light .webkite-sort-area > .webkite-toggle, #webkite-results.wine-shop-landscape.webkite-light .webkite-primary-filter-menu > .webkite-toggle {
+  #webkite-results.wine-shop-landscape.webkite-light .webkite-sort-area > .webkite-sort-menu-trigger, #webkite-results.wine-shop-landscape.webkite-light .webkite-primary-filter-menu > .webkite-filter-menu-trigger {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -232,11 +243,11 @@
     font: 700 14px/1.3 'Open Sans', 'Arial', sans-serif;
     text-align: left;
     margin: 0;
-    padding: 3px 18px 3px 0;
+    padding: 0;
     height: 28px;
     width: 80px;
     white-space: nowrap; }
-    #webkite-results.wine-shop-landscape.webkite-light .webkite-sort-area > .webkite-toggle > span, #webkite-results.wine-shop-landscape.webkite-light .webkite-primary-filter-menu > .webkite-toggle > span {
+    #webkite-results.wine-shop-landscape.webkite-light .webkite-sort-area > .webkite-sort-menu-trigger > span, #webkite-results.wine-shop-landscape.webkite-light .webkite-primary-filter-menu > .webkite-filter-menu-trigger > span {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
@@ -244,12 +255,17 @@
       display: block;
       overflow: hidden;
       text-overflow: ellipsis;
-      padding-left: 8px;
-      width: 100%; }
+      padding: 4px 18px 4px 8px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0; }
   #webkite-results.wine-shop-landscape.webkite-light .webkite-sort-area {
     position: relative;
-    z-index: 3; }
-  #webkite-results.wine-shop-landscape.webkite-light .webkite-sort-area > .webkite-toggle i {
+    z-index: 5; }
+  #webkite-results.wine-shop-landscape.webkite-light .webkite-sort-area > .webkite-sort-menu-trigger i {
     background: url("angle-light.png") center center no-repeat;
     height: 10px;
     pointer-events: none;
@@ -274,14 +290,14 @@
     left: 0;
     top: 0;
     vertical-align: top;
-    z-index: 2; }
-  #webkite-results.wine-shop-landscape.webkite-light .webkite-primary-filter-menu > .webkite-toggle {
+    z-index: 4; }
+  #webkite-results.wine-shop-landscape.webkite-light .webkite-primary-filter-menu > .webkite-filter-menu-trigger {
     -webkit-border-radius: 3px 0 0 3px;
     -moz-border-radius: 3px 0 0 3px;
     -ms-border-radius: 3px 0 0 3px;
     -o-border-radius: 3px 0 0 3px;
     border-radius: 3px 0 0 3px; }
-  #webkite-results.wine-shop-landscape.webkite-light .webkite-primary-filter-menu > .webkite-toggle i {
+  #webkite-results.wine-shop-landscape.webkite-light .webkite-primary-filter-menu > .webkite-filter-menu-trigger i {
     background: url("plus-light.png") no-repeat;
     height: 12px;
     width: 12px;
@@ -494,6 +510,62 @@
     #webkite-results.wine-shop-landscape.webkite-light .all-current-filters .all-filters-wrapper [class^="filter-group"] {
       display: inline; }
 
+/******************************************* TOOLTIPS */
+#webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip {
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.2em;
+  position: absolute;
+  z-index: 2147483647; }
+  #webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip .webkite-tooltip-content {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    color: rgba(0, 0, 0, 0.7);
+    background: #fff;
+    padding: 6px 7px;
+    -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10; }
+  #webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip:after, #webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip:before {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border: 1px solid transparent;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    margin-left: -4px;
+    z-index: 11;
+    background-clip: padding-box; }
+  #webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip:after {
+    z-index: 9;
+    -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.2); }
+  #webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip.webkite-tooltip-top:after, #webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip.webkite-tooltip-top:before {
+    top: -4px;
+    bottom: auto; }
+  #webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip.webkite-tooltip-left:after, #webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip.webkite-tooltip-left:before {
+    left: 10px;
+    margin: 0; }
+  #webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip.webkite-tooltip-right:after, #webkite-results.wine-shop-landscape.webkite-light #webkite-tooltip.webkite-tooltip-right:before {
+    right: 10px;
+    left: auto;
+    margin: 0; }
+
 /********************************************* PAGINATION */
 #webkite-results.wine-shop-landscape.webkite-light {
   /* page input */
@@ -566,7 +638,7 @@
   padding: 0;
   margin: 0;
   text-align: center; }
-#webkite-results.xs.wine-shop-landscape.webkite-light .webkite-filter-area, #webkite-results.xs.wine-shop-landscape.webkite-light .webkite-sort-area, #webkite-results.xs.wine-shop-landscape.webkite-light .webkite-sort-area > .webkite-toggle {
+#webkite-results.xs.wine-shop-landscape.webkite-light .webkite-filter-area, #webkite-results.xs.wine-shop-landscape.webkite-light .webkite-sort-area, #webkite-results.xs.wine-shop-landscape.webkite-light .webkite-sort-area > .webkite-sort-menu-trigger {
   width: 100%; }
 #webkite-results.xs.wine-shop-landscape.webkite-light .sort-menu {
   width: 95%; }
@@ -584,7 +656,7 @@
   display: block;
   text-align: center; }
 
-#webkite-results.sm.wine-shop-landscape.webkite-light .webkite-filter-area, #webkite-results.sm.wine-shop-landscape.webkite-light .webkite-sort-area, #webkite-results.sm.wine-shop-landscape.webkite-light .webkite-sort-area > .webkite-toggle {
+#webkite-results.sm.wine-shop-landscape.webkite-light .webkite-filter-area, #webkite-results.sm.wine-shop-landscape.webkite-light .webkite-sort-area, #webkite-results.sm.wine-shop-landscape.webkite-light .webkite-sort-area > .webkite-sort-menu-trigger {
   width: 100%; }
 #webkite-results.sm.wine-shop-landscape.webkite-light .sort-menu {
   width: 95%; }
