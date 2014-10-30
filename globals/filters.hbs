@@ -2,7 +2,7 @@
   <div class="webkite-filter-area">
     <div class="webkite-applied-filters">
       <div class="webkite-primary-filter-menu">
-        <button class="webkite-toggle" data-target=".filter-menu" type="button" title="{{t "Filter" default="Filter"}}"><span class="webkite-toggle" data-target=".filter-menu">{{t "Filter" default="Filter"}}</span><i></i></button>
+        <div class="webkite-filter-menu-trigger"><span class="webkite-tooltip webkite-toggle" data-target=".filter-menu" title="{{t "Filter" default="Filter"}}" data-webkite-tooltip="touchdisabled">{{t "Filter" default="Filter"}}</span><i></i></div>
         <ul class="filter-menu webkite-hide webkite-menu">
           {{#each (select facets filterable=true type="Enum")}}
             <li><span class="webkite-link">{{displayName}}</span>
@@ -23,7 +23,7 @@
             {{~#if @first~}}<span>{{t "by" default="by"}}</span>{{~/if~}}
             <div class="filter-group-{{@index}}">
               {{~#each values~}}
-                <a href="#" class="webkite-remove-filter" data-facet="{{../facet}}" data-operator="{{../operator}}" data-value="{{this}}" title="{{this}}">{{this}}</a>
+                <a href="#" class="webkite-tooltip webkite-remove-filter" data-facet="{{../facet}}" data-operator="{{../operator}}" data-value="{{this}}" title="{{this}}">{{this}}</a>
                 {{~#unless @last}}<span>{{t "or" default="or"}}</span>{{/unless~}}
               {{~/each~}}
             </div>
@@ -38,7 +38,7 @@
               {{~#if @first~}}<span>{{t "by" default="by"}}</span>{{~/if~}}
               <div class="filter-group-{{@index}}">
                 {{~#each values~}}
-                  <a href="#" class="webkite-remove-filter" data-facet="{{../facet}}" data-operator="{{../operator}}" data-value="{{this}}" title="{{this}}">{{this}}</a>
+                  <a href="#" class="webkite-tooltip webkite-remove-filter" data-facet="{{../facet}}" data-operator="{{../operator}}" data-value="{{this}}" title="{{this}}">{{this}}</a>
                   {{~#unless @last}}<span>{{t "or" default="or"}}</span>{{/unless~}}
                 {{~/each~}}
               </div>

@@ -3,15 +3,15 @@
     {{~#if sort.currentSort~}}
       {{~#each (select facets sortable=true)~}}
         {{~#if (equals name ../sort.currentSort)~}}
-          <button class="webkite-toggle" data-target=".sort-menu" type="button" title="{{t "Sorted by" default="Sorted by"}}: {{displayName}}"><span class="webkite-toggle" data-target=".sort-menu">
+          <div class="webkite-sort-menu-trigger"><span class="webkite-tooltip webkite-toggle" data-target=".sort-menu" title="{{t "Sorted by" default="Sorted by"}}: {{displayName}}" data-webkite-tooltip="touchdisabled">
             {{displayName}}
-          </span><i></i></button>
+          </span><i></i></div>
         {{~/if~}}
       {{~/each~}}
     {{~else~}}
-      <button class="webkite-toggle" data-target=".sort-menu" type="button" title="{{t "Sort" default="Sort"}}"><span class="webkite-toggle" data-target=".sort-menu">
+      <div class="webkite-sort-menu-trigger"><span class="webkite-tooltip webkite-toggle" data-target=".sort-menu" title="{{t "Sort" default="Sort"}}" data-webkite-tooltip="touchdisabled">
         {{t "Sort" default="Sort"}}
-      </span><i></i></button>
+      </span><i></i></div>
     {{/if~}}
     <ul class="sort-menu webkite-menu webkite-hide">
       {{#unless sort.hideDefault~}}

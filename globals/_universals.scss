@@ -148,8 +148,14 @@ $tokenFifth: #6f7ca8;
     -o-transition: all 0 none;
     transition:none;
     }
+  header, footer{
+    float:none;
+    width:auto;
+    display:block;
+    }
   button, select, input{
     text-transform: none;
+    @include noShadows;
     &:active{@include noShadows;}  
     }
   button::-moz-focus-inner {
@@ -193,6 +199,7 @@ $tokenFifth: #6f7ca8;
 @mixin universalStyles{
   /******************************************** GENERAL */
   #webkite-results.#{$themeName}.webkite-#{$colorVariant}{
+    position:relative;
     text-align:left;
     direction:ltr;
     }
@@ -203,6 +210,9 @@ $tokenFifth: #6f7ca8;
     .webkite-results-header, .webkite-results-footer{
       text-align: justify;
       position: relative;
+      float:none;
+      width:auto;
+      display:block;
       .webkite-sort-area, .webkite-filter-area{
         display: inline-block;
         vertical-align:top;
@@ -316,8 +326,8 @@ $tokenFifth: #6f7ca8;
   /************************************** SORTS AND FILTERS */
   #webkite-results.#{$themeName}.webkite-#{$colorVariant}{
   
-    .webkite-sort-area > .webkite-toggle,
-    .webkite-primary-filter-menu > .webkite-toggle{
+    .webkite-sort-area > .webkite-sort-menu-trigger,
+    .webkite-primary-filter-menu > .webkite-filter-menu-trigger{
       @include boxedUp;
       @include roundedUp(3px);
       background: $lightestOpacity;
@@ -330,7 +340,7 @@ $tokenFifth: #6f7ca8;
       font: 700 14px/1.3 'Open Sans', 'Arial', sans-serif;
       text-align: left;
       margin: 0;
-      padding: 3px 18px 3px 0;
+      padding: 0;
       height: 28px;
       width:80px;
       white-space:nowrap;
@@ -340,16 +350,21 @@ $tokenFifth: #6f7ca8;
         display:block;
         overflow:hidden;
         text-overflow:ellipsis;
-        padding-left:8px;
+        padding: 4px 18px 4px 8px;
         width:100%;
+        position:absolute;
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
         }
       }
     /* sorts */ 
     .webkite-sort-area{
       position: relative;
-      z-index: 3;
+      z-index: 5;
       }
-    .webkite-sort-area > .webkite-toggle i{
+    .webkite-sort-area > .webkite-sort-menu-trigger i{
       @if $colorVariant == light{background: url("angle-light.png") center center no-repeat;}
       @if $colorVariant == dark{background: url("angle-dark.png") center center no-repeat;} 
       height: 10px;
@@ -378,10 +393,10 @@ $tokenFifth: #6f7ca8;
       left:0;
       top:0; 
       vertical-align:top;
-      z-index: 2;
+      z-index: 4;
       }
-    .webkite-primary-filter-menu > .webkite-toggle {@include roundedUp(3px 0 0 3px);}
-    .webkite-primary-filter-menu > .webkite-toggle i{
+    .webkite-primary-filter-menu > .webkite-filter-menu-trigger {@include roundedUp(3px 0 0 3px);}
+    .webkite-primary-filter-menu > .webkite-filter-menu-trigger i{
       @if $colorVariant == light{background: url("plus-light.png") no-repeat;} 
       @if $colorVariant == dark{background: url("plus-dark.png") no-repeat;}
       height: 12px;
@@ -573,6 +588,70 @@ $tokenFifth: #6f7ca8;
       }
     
     }
+    
+  /******************************************* TOOLTIPS */
+  #webkite-results.#{$themeName}.webkite-#{$colorVariant}{
+    #webkite-tooltip{
+      text-align:left;
+      font-size:13px;
+      line-height:1.2em;
+      position:absolute;
+      z-index:2147483647;
+      .webkite-tooltip-content{
+        @include roundedUp(3px);
+        color:$medOpacity;
+        @if $colorVariant == light{background:#fff;} 
+        @if $colorVariant == dark{background:#595959;} 
+        padding:6px 7px;
+        -moz-box-shadow:0 2px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.1);
+        -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.1);
+        box-shadow:0 2px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.1);
+        border:1px solid rgba(0,0,0,0.2);
+        position:relative;
+        z-index:10;
+        }
+      &:after, &:before{
+        width:8px;
+        height:8px;
+        @if $colorVariant == light{background:#fff;} 
+        @if $colorVariant == dark{background:#595959;} 
+        border:1px solid transparent;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content:'';
+        position:absolute;
+        left:50%;
+        bottom:-4px;
+        margin-left:-4px;
+        z-index:11;
+        background-clip:padding-box;
+        }
+      &:after{
+        z-index:9;
+        -moz-box-shadow:0 2px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.1);
+        -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.1);
+        box-shadow:0 2px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.1);
+        border-color:rgba(0,0,0,0.2);
+        }
+      &.webkite-tooltip-top:after, &.webkite-tooltip-top:before{
+        top:-4px;
+        bottom:auto;
+        }
+      &.webkite-tooltip-left:after, &.webkite-tooltip-left:before{
+        left:10px;
+        margin:0;
+        }
+      &.webkite-tooltip-right:after, &.webkite-tooltip-right:before{
+        right:10px;
+        left:auto;
+        margin:0;
+        }
+      }
+    }
+
   
   /********************************************* PAGINATION */
   #webkite-results.#{$themeName}.webkite-#{$colorVariant}{
@@ -640,7 +719,7 @@ $tokenFifth: #6f7ca8;
       margin:0;
       text-align:center;
       }
-    .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{ width: 100%; }
+    .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-sort-menu-trigger{ width: 100%; }
     .sort-menu{width: 95%;}
     .webkite-sort-area+.webkite-filter-area{ margin-top: $mainGutter;}
     .webkite-filter-area,
@@ -661,7 +740,7 @@ $tokenFifth: #6f7ca8;
     }
   
   #webkite-results.sm.#{$themeName}.webkite-#{$colorVariant}{
-    .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{ width: 100%; }
+    .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-sort-menu-trigger{ width: 100%; }
     .sort-menu{width: 95%;}
     .webkite-sort-area+.webkite-filter-area{ margin-top: $mainGutter;}
     .webkite-filter-area,
