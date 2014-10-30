@@ -46,7 +46,7 @@
                   <div class="webkite-block webkite-block-fifty webkite-bottle">
                     <span class="webkite-price">
                       <span class="webkite-price-label">{{t "bottle" default="bottle"}}</span>
-                      {{#facet name="Price Per Bottle"~}}<span class="webkite-price-value" title="{{displayValue}}">{{displayValue}}</span>{{~/facet}}                
+                      {{#facet name="Price Per Bottle"~}}<span class="webkite-price-value webkite-tooltip" title="{{displayValue}}">{{displayValue}}</span>{{~/facet}}                
                       {{~#if (find facets name="Price Per Bottle")~}}
                         {{#facet name="List Price Per Bottle"}}<span class="webkite-list-price-value"><strike>{{displayValue}}</strike></span>{{/facet}}
                       {{~else~}}
@@ -59,7 +59,7 @@
                   <div class="webkite-block webkite-block-fifty webkite-case">
                     <span class="webkite-price">
                       <span class="webkite-price-label">{{t "case" default="case"}}</span>
-                      {{#facet name="Price Per Case"~}}<span class="webkite-price-value" title="{{displayValue}}">{{displayValue}}</span>{{~/facet}}                
+                      {{#facet name="Price Per Case"~}}<span class="webkite-price-value webkite-tooltip" title="{{displayValue}}">{{displayValue}}</span>{{~/facet}}                
                       {{~#if (find facets name="Price Per Case")~}}
                         {{#facet name="List Price Per Case"}}<span class="webkite-list-price-value"><strike>{{displayValue}}</strike></span>{{/facet}}
                       {{~else~}}
@@ -143,7 +143,7 @@
                 <div class="webkite-block webkite-block-fifty webkite-bottle">
                   <span class="webkite-price">
                     <span class="webkite-price-label">{{t "bottle" default="bottle"}}</span>
-                    {{~#facet name="Price Per Bottle"~}}<span class="webkite-price-value" title="{{displayValue}}">{{displayValue}}</span>{{~/facet~}}                
+                    {{~#facet name="Price Per Bottle"~}}<span class="webkite-price-value webkite-tooltip" title="{{displayValue}}">{{displayValue}}</span>{{~/facet~}}                
                     {{~#if (find facets name="Price Per Bottle")~}}
                       {{#facet name="List Price Per Bottle"}}<span class="webkite-list-price-value"><strike>{{displayValue}}</strike></span>{{/facet}}
                     {{~else~}}
@@ -156,7 +156,7 @@
                 <div class="webkite-block webkite-block-fifty webkite-case">
                   <span class="webkite-price">
                     <span class="webkite-price-label">{{t "case" default="case"}}</span>
-                    {{~#facet name="Price Per Case"~}}<span class="webkite-price-value" title="{{displayValue}}">{{displayValue}}</span>{{~/facet~}}                
+                    {{~#facet name="Price Per Case"~}}<span class="webkite-price-value webkite-tooltip" title="{{displayValue}}">{{displayValue}}</span>{{~/facet~}}                
                     {{~#if (find facets name="Price Per Case")~}}
                       {{#facet name="List Price Per Case"}}<span class="webkite-list-price-value"><strike>{{displayValue}}</strike></span>{{/facet}}
                     {{~else~}}
